@@ -1,0 +1,25 @@
+.containerss {
+    top: 198px;
+    left: 298px;
+    width: 844px;
+    height: 60px;
+    z-index: 78;
+  }
+  
+  .containerss p {
+    overflow: hidden;
+    white-space: pre-wrap;
+    width: 844px;
+    height: 60px;
+    margin: 0px;
+    color: rgb(255, 255, 255);
+    font-family: Prompt;
+    font-weight: 600;
+    font-size: 40px;
+    letter-spacing: 0px;
+    line-height: 60px;
+    text-align: center;
+    text-transform: none;
+    opacity: 1;
+  }
+  
