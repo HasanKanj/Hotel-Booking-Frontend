@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Outlet } from "react-router-dom";
 import Header from "./Header";
 import Loader from "./Components/Loader/Loader";
+import Footers from '../../client/src/Components/Footer/Footer.jsx'
 
 export default function Layout() {
   const [showLoader, setShowLoader] = useState(true);
@@ -26,6 +27,7 @@ export default function Layout() {
       )}
       <Outlet />
       <Loader />
+      <Footers/>
     </div>
   );
 }

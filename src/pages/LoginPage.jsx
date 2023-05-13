@@ -1,13 +1,12 @@
-import { useContext, useState } from "react";
+import {  useState } from "react";
 import { Link, Navigate } from "react-router-dom";
-import { UserContext } from "../UserContext";
+
 import axios from "axios";
 
 export default function LoginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [redirect,setRedirect] = useState(false);
-  useContext(UserContext);
   async function handleLoginSubmit(ev) {
     ev.preventDefault();
     try {
@@ -22,6 +21,7 @@ export default function LoginPage() {
   if(redirect){
     return <Navigate to={''}/>
   }
+  
   return (
     <div className="mt-4 grow flex items-center justify-around">
       <div className="mb-64">
@@ -40,6 +40,8 @@ export default function LoginPage() {
             onChange={(ev) => setPassword(ev.target.value)}
           />
           <button className="primary">Login</button>
+          
+
           <div className="text-center py-2 text-gray-500">
             {" "}
             Dont have an account yet?
