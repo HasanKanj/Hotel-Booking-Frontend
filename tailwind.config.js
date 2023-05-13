@@ -1,5 +1,4 @@
 import flowbitePlugin from 'flowbite/plugin';
-
 const tailwindConfig = {
   content: [
     './index.html',
@@ -15,6 +14,7 @@ const tailwindConfig = {
   },
   plugins: [
     flowbitePlugin,
+
   ],
 };
 
