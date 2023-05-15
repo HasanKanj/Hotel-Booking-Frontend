@@ -65,7 +65,7 @@ export default function Header() {
                 <NavLink to="/blog">Blog</NavLink>
               </li>
               <li className="text-white hover:text-indigo-200">
-                <NavLink to="/about">About Us</NavLink>
+                <NavLink to="/About">About Us</NavLink>
               </li>
               <li className="text-white hover:text-indigo-200">
                 <NavLink to="/Contactus">Contact Us</NavLink>
