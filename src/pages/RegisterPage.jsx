@@ -34,6 +34,7 @@ export default function RegisterPage() {
             placeholder="Hasan Kanj"
             value={name}
             onChange={(ev) => setName(ev.target.value)}
+            required
           />
 
           <input
@@ -41,6 +42,8 @@ export default function RegisterPage() {
             placeholder="your@email.com"
             value={email}
             onChange={(ev) => setEmail(ev.target.value)}
+            required
+
           />
 
           <input
@@ -48,6 +51,8 @@ export default function RegisterPage() {
             placeholder="password"
             value={password}
             onChange={(ev) => setPassword(ev.target.value)}
+            required
+
           />
 
           <button className="primary">Register</button>

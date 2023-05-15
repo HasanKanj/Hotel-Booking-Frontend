@@ -1,4 +1,4 @@
-import useFetch from "../../../../hook/usefetch";
+import useFetch from "../../../hook/usefetch";
 import "./featured.css";
 
 const Featured = () => {
