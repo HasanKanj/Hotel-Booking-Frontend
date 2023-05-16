@@ -6,20 +6,19 @@ import About from "../Components/AboutUs/About";
 import ScrollToTop from "../Components/Home/ScrolltoTop/Scroll";
 import Home from "../Components/Home/Home";
 import Contactus from "../Components/ContactUs/Contactus";
-// import Page404 from "../Components/404 Page/Page404";
-
-
+import Page404 from "../Components/404 Page/Page404";
 const Routers = () => {
   return (
     <div className="App">
       <Routes>
-        <Route path="/" element={<Home />}>
+        <Route path="/" element={<Home />}/>
+          
           <Route path="/login" element={<Loginn />} />
           <Route path="/register" element={<Register />} />
           <Route path="/Contactus" element={<Contactus />} />
           <Route path="/About" element={<About />} />
           <Route path="/register" element={<Register />} />
-        </Route>
+          <Route path="/*" element={<Page404 />} />
       </Routes>
       <ScrollToTop />
     </div>

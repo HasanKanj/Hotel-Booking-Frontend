@@ -14,14 +14,7 @@ export default function Footers() {
   
           <nav aria-label="Footer About Nav" className="mt-8">
             <ul className="space-y-4 text-sm">
-              <li>
-                <a
-                  className="text-gray-700 transition hover:text-gray-700/75"
-                  href="/"
-                >
-                  Company History
-                </a>
-              </li>
+             
   
               <li>
                 <a
@@ -85,14 +78,7 @@ export default function Footers() {
                 </a>
               </li>
   
-              <li>
-                <a
-                  className="text-gray-700 transition hover:text-gray-700/75"
-                  href="/"
-                >
-                  Google Ads
-                </a>
-              </li>
+            
             </ul>
           </nav>
         </div>
@@ -102,23 +88,9 @@ export default function Footers() {
   
           <nav aria-label="Footer Resources Nav" className="mt-8">
             <ul className="space-y-4 text-sm">
-              <li>
-                <a
-                  className="text-gray-700 transition hover:text-gray-700/75"
-                  href="/"
-                >
-                  Online Guides
-                </a>
-              </li>
+           
   
-              <li>
-                <a
-                  className="text-gray-700 transition hover:text-gray-700/75"
-                  href="/"
-                >
-                  Conference Notes
-                </a>
-              </li>
+            
   
               <li>
                 <a
@@ -184,12 +156,7 @@ export default function Footers() {
           <p className="text-lg font-medium text-gray-900">Stay in Touch</p>
   
           <div className="mx-auto mt-8 max-w-md sm:ms-0">
-            <p
-              className="text-center leading-relaxed text-gray-500 ltr:sm:text-left rtl:sm:text-right"
-            >
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Earum id,
-              iure consectetur et error hic!
-            </p>
+         
   
             <form className="mt-4">
               <div
@@ -219,7 +186,7 @@ export default function Footers() {
         className="mt-16 border-t border-gray-100 pt-6 sm:flex sm:items-center sm:justify-between"
       >
         <p className="text-center text-sm text-gray-500 sm:text-left">
-          Copyright &copy; 2022. All rights reserved.
+          Copyright &copy; 2023. All rights reserved.
         </p>
   
         <ul className="mt-4 flex justify-center gap-6 sm:mt-0 sm:justify-start">
