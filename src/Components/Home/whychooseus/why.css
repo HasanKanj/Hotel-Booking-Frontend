@@ -1,0 +1,26 @@
+.card {
+  width: 25.33%;
+  margin: 0 auto;
+}
+.card-container {
+  display: flex;
+}
+
+.section-titles {
+  visibility: visible;
+  font-size: 45px;
+  color: hsl(206, 30%, 26%);
+  font-weight: 700;
+  margin-top: 70px;
+}
+
+
+
+@media screen and (max-width: 750px) {
+  .card {
+    width: 100%;
+  }
+  .card-container {
+    flex-wrap: wrap;
+  }
+}

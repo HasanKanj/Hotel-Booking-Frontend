@@ -13,8 +13,8 @@
 
 .listSearch {
   flex: 1;
-  background-color: #febb02;
-  padding: 10px;
+  background-color: hsl(214, 57%, 51%);
+  padding: 40px;
   border-radius: 10px;
   position: sticky;
   top: 10px;
@@ -65,7 +65,7 @@
 }
 
 .lsOptionInput{
-  width: 50px;
+  width: 80px;
 }
 
 .listSearch>button{

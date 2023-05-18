@@ -1,12 +1,55 @@
-.homeContainer{
-    margin-top: 50px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 30px;
-  }
-  
-  .homeTitle{
-    width: 1024px;
-    font-size: 20px;
-  }
+.homeContainer {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.homeTitle {
+  width: 1024px;
+  font-size: 20px;
+}
+
+.section-title {
+  visibility: visible;
+  font-size: 45px;
+  color: hsl(206, 30%, 26%);
+  font-weight: 700;
+}
+
+.section-subtitle {
+  color: var(--bright-navy-blue);
+  font-size: var(---5);
+  text-transform: uppercase;
+  font-family: var(--ff-montserrat);
+  margin-top: 35px;
+
+}
+
+.section-subtitle2 {
+  color: var(--bright-navy-blue);
+  font-size: var(---5);
+  text-transform: uppercase;
+  font-family: var(--ff-montserrat);
+  margin-top: 65px;
+
+}
+
+
+.section-subtitle3 {
+  color: var(--bright-navy-blue);
+  font-size: var(---5);
+  text-transform: uppercase;
+  font-family: var(--ff-montserrat);
+  margin-top: 65px;
+}
+
+.section-text {
+  color: var(--black-coral);
+  font-size: 15px;
+  max-width: 550px;
+}
+.firstsec {
+  background-color: #f7fafc; /* or use the hex code for gray-100 */
+}

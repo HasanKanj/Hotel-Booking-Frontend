@@ -64,8 +64,8 @@ export default function Header() {
                 </NavLink>
               </li>
               <li className="text-black">
-                <NavLink to="/blog" activeClassName="active">
-                  Blog
+                <NavLink to="/hotel" activeClassName="active">
+                  Properties
                 </NavLink>
               </li>
               <li className="text-black">
@@ -105,7 +105,7 @@ export default function Header() {
           </Link>
           <Link
             to="/login"
-            className="px-4 py-2 text-white bg-blue-500 rounded-md shadow hover:bg-blue-800"
+            className="btn btn-primary"
           >
             Log in
           </Link>
