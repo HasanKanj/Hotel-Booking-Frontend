@@ -1,23 +1,25 @@
-import  { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import "./propertyList.css";
 
 const PropertyList = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch("http://localhost:5000/api/hotels/countByType");
-        const jsonData = await response.json();
-        setData(jsonData);
-      } catch (error) {
-        console.log(error);
-      } finally {
-        setLoading(false);
-      }
-    };
+  const fetchData = async () => {
+    try {
+      const response = await fetch(
+        "http://localhost:5000/api/hotels/countByType"
+      );
+      const jsonData = await response.json();
+      setData(jsonData);
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setLoading(false);
+    }
+  };
 
+  useEffect(() => {
     fetchData();
   }, []);
 

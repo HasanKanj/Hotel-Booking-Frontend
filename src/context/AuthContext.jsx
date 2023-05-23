@@ -1,8 +1,11 @@
 import { createContext, useEffect, useReducer } from "react";
 import PropTypes from "prop-types";
 
+const user = localStorage.getItem("user");
+const parsedUser = user !== "undefined" ? JSON.parse(user) : null;
+
 const INITIAL_STATE = {
-  user: JSON.parse(localStorage.getItem("user")) || null,
+  user: parsedUser,
   loading: false,
   error: null,
 };

@@ -10,7 +10,7 @@ import { useContext, useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { SearchContext } from "../../context/SearchContext";
 import { AuthContext } from "../../context/AuthContext";
-// import Reserve from "../../components/reserve/Reserve";
+import Reserve from "../Reserve/Reserve";
 import axios from "axios";
 
 const Hotel = () => {
@@ -141,6 +141,7 @@ const Hotel = () => {
                 <h1 className="hotelTitle">{data.title}</h1>
                 <p className="hotelDesc">{data.description}</p>
                 <p className="hotelDesc">Up to {data.guests} guests</p>
+                <img src= {data.url}/>
 
               </div>
               <div className="hotelDetailsPrice">
@@ -160,8 +161,7 @@ const Hotel = () => {
       
         </div>
       )}
-      {openModal}
-      {/* && <Reserve setOpen={setOpenModal} hotelId={id} */}
+      {openModal && <Reserve setOpen={setOpenModal} hotelId={id}/>}
     </div>
   );
 };

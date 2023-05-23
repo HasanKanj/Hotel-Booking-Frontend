@@ -3,7 +3,7 @@ import Register from "../Components/Register/Register";
 import Loginn from "../Components/Login/Loginn";
 // import Loader from "../Components/Loader/"
 import About from "../Components/AboutUs/About";
-// import Login from "../pages/LoginPage";
+// import Login from "../pages/login/Login";
 import ScrollToTop from "../Components/Home/ScrolltoTop/Scroll";
 import Home from "../Components/Home/Home";
 import Contactus from "../Components/ContactUs/Contactus";
@@ -16,7 +16,7 @@ const Routers = () => {
       <Routes>
         <Route path="/" element={<Home />}/>
           
-          <Route path="/login" element={<Loginn />} />
+          <Route path="/Login" element={<Loginn />} />
           <Route path="/register" element={<Register />} />
           <Route path="/Contactus" element={<Contactus />} />
           <Route path="/About" element={<About />} />

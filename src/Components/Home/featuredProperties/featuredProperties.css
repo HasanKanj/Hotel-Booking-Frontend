@@ -11,6 +11,12 @@
   gap: 10px;
   display: flex;
   flex-direction: column;
+  transition: transform 0.3s ease-in-out;
+
+}
+.fpItem:hover {
+  /* Apply animations when hovering over the item */
+  transform: scale(1.1);
 }
 
 .fpImg {

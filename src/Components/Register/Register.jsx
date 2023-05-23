@@ -1,25 +1,59 @@
-import { useState } from "react";
+import  { useState } from "react";
 import axios from "axios";
 
+const API_URL = "http://localhost:5000/api/auth/register";
+
 export default function Register() {
-  const [name, setName] = useState("");
+  const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [phone, setPhone] = useState("");
+
+  const handleUsernameChange = (ev) => {
+    setUsername(ev.target.value);
+  };
+
+  const handleEmailChange = (ev) => {
+    setEmail(ev.target.value);
+  };
+
+  const handlePasswordChange = (ev) => {
+    setPassword(ev.target.value);
+  };
+
+  const handlePhoneChange = (ev) => {
+    ev.persist();
+    const sanitizedValue = ev.target.value.replace(/\D/g, "");
+    setPhone(sanitizedValue);
+  };
 
   async function registerUser(ev) {
     ev.preventDefault();
+
     try {
-      await axios.post("http://localhost:5000/api/users/post", {
-        name,
+      const response = await axios.post(API_URL, {
+        username,
         email,
         password,
+        phone,
+        
       });
-      alert("Registration Successful.");
-      setName("");
-      setEmail("");
-      setPassword("");
-    } catch (e) {
-      alert("Registration failed. Please try again");
+
+      if (response.status === 200) {
+        alert("Registration Successful.");
+        setUsername("");
+        setEmail("");
+        setPassword("");
+        setPhone("");
+        
+      } else {
+        console.log(response.data)
+
+        alert("Registration failed. Please try again.");
+      }
+    } catch (error) {
+      alert("Registration failed. Please try again.");
+      
     }
   }
 
@@ -56,15 +90,32 @@ export default function Register() {
                     <div className="mt-2.5">
                       <input
                         type="text"
-                        value={name}
-                        onChange={(ev) => setName(ev.target.value)}
+                        value={username}
+                        onChange={handleUsernameChange}
                         required
                         placeholder="Enter your full name"
                         className="block w-full p-4 text-black placeholder-gray-500 transition-all duration-200 border border-gray-200 rounded-md bg-gray-50 focus:outline-none focus:border-blue-600 focus:bg-white caret-blue-600"
                       />
                     </div>
                   </div>
-
+                  <div>
+                    <label
+                      htmlFor=""
+                      className="text-base font-medium text-gray-900"
+                    >
+                      Phone number
+                    </label>
+                    <div className="mt-2.5">
+                      <input
+                        type="text"
+                        value={phone}
+                        onChange={handlePhoneChange}
+                        required
+                        placeholder="Enter your phone number"
+                        className="block w-full p-4 text-black placeholder-gray-500 transition-all duration-200 border border-gray-200 rounded-md bg-gray-50 focus:outline-none focus:border-blue-600 focus:bg-white caret-blue-600"
+                      />
+                    </div>
+                  </div>
                   <div>
                     <label
                       htmlFor=""
@@ -77,7 +128,7 @@ export default function Register() {
                       <input
                         type="email"
                         value={email}
-                        onChange={(ev) => setEmail(ev.target.value)}
+                        onChange={handleEmailChange}
                         required
                         placeholder="Enter email to get started"
                         className="block w-full p-4 text-black placeholder-gray-500 transition-all duration-200 border border-gray-200 rounded-md bg-gray-50 focus:outline-none focus:border-blue-600 focus:bg-white caret-blue-600"
@@ -97,7 +148,7 @@ export default function Register() {
                       <input
                         type="password"
                         value={password}
-                        onChange={(ev) => setPassword(ev.target.value)}
+                        onChange={handlePasswordChange}
                         required
                         placeholder="Enter your password"
                         className="block w-full p-4 text-black placeholder-gray-500 transition-all duration-200 border border-gray-200 rounded-md bg-gray-50 focus:outline-none focus:border-blue-600 focus:bg-white caret-blue-600"

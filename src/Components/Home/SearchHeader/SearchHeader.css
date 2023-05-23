@@ -1,10 +1,9 @@
 .headerss {
-  background-color: hsl(214, 57%, 51%);
   color: white;
   display: flex;
   justify-content: center;
   position: relative;
-  height: 250px;
+  height: 146px;
 }
 
 .headerContainer {
@@ -49,11 +48,11 @@
   align-items: center;
   justify-content: space-around;
   padding: 10px 0px;
-  border-radius: 5px;
+  border-radius: 44px;
   position: absolute;
   bottom: 89px;
   width: 100%;
-  max-width: 1024px;
+  max-width: 1224px;
 
 }
 

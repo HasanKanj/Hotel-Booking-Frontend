@@ -1,10 +1,20 @@
 import { useState } from "react";
-import { NavLink } from "react-router-dom";
-import { Link } from "react-router-dom"; // Import the Link component from your router library
+import { Link, NavLink, useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { AuthContext } from "../../context/AuthContext";
 
 export default function Header() {
   const [navbar, setNavbar] = useState(false);
+  const { user, dispatch } = useContext(AuthContext);
+  const navigate = useNavigate();
 
+  const handleLogout = () => {
+    sessionStorage.removeItem("token");
+    dispatch({ type: "LOGOUT" });
+    navigate("/login");
+  };
+
+  
   return (
     <nav className="w-full bg-white-700 shadow">
       <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
@@ -79,37 +89,49 @@ export default function Header() {
                 </NavLink>
               </li>
             </ul>
-
-            <div className="mt-3 space-y-2 lg:hidden md:inline-block">
-              <Link
-                to="/signup"
-                className="inline-block w-full px-4 py-2 text-center text-black bg-black-600 rounded-md shadow hover:bg-gray-200"
+            {user ? (
+              user.username &&    <div className="flex items-center">
+              <span className="text-black mr-2">{user.username}</span>
+              <button
+                className="text-black bg-black-600 rounded-md px-4 py-2 shadow hover:bg-white-800"
+                onClick={handleLogout}
               >
-                Sign up
-              </Link>
-              <Link
-                to="/register"
-                className="inline-block w-full px-4 py-2 text-center text-black-800 bg-blue-500 rounded-md shadow"
-              >
-                Log in
-              </Link>
+                Logout
+              </button>
             </div>
+            ) : (
+              <div className="mt-3 space-y-2 lg:hidden md:inline-block">
+                <Link
+                  to="/signup"
+                  className="inline-block w-full px-4 py-2 text-center text-black bg-black-600 rounded-md shadow hover:bg-gray-200"
+                >
+                  Sign up
+                </Link>
+                <Link
+                  to="/register"
+                  className="inline-block w-full px-4 py-2 text-center text-black-800 bg-blue-500 rounded-md shadow"
+                >
+                  Log in
+                </Link>
+              </div>
+            )}
           </div>
         </div>
-        <div className="hidden space-x-2 md:inline-block">
-          <Link
-            to="/register"
-            className="px-4 py-2 text-black bg-black-600 rounded-md shadow hover:bg-white-800"
-          >
-            Sign up
-          </Link>
-          <Link
-            to="/login"
-            className="btn btn-primary"
-          >
-            Log in
-          </Link>
-        </div>
+        {user ? (
+          user.username
+        ) : (
+          <div className="hidden space-x-2 md:inline-block">
+            <Link
+              to="/register"
+              className="px-4 py-2 text-black bg-black-600 rounded-md shadow hover:bg-white-800"
+            >
+              Sign up
+            </Link>
+            <Link to="/login" className="btn btn-primary">
+              Log in
+            </Link>
+          </div>
+        )}
       </div>
     </nav>
   );

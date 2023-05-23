@@ -1,5 +1,5 @@
 import "../Banner1/Banner.css";
-
+import SearchHeader from "../SearchHeader/SearchHeader";
 export default function Banner() {
   return (
     <div>
@@ -19,6 +19,7 @@ export default function Banner() {
           </div>
         </div>
       </section>
+      <SearchHeader/>
     </div>
   );
 }
