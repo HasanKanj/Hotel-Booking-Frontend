@@ -5,7 +5,7 @@ export default function Banner() {
     <div>
       <section className="hero" id="home">
         <div className="container">
-          <h2 className="h1 hero-title">
+          <h2 className="bodi hero-title">
             Discover Lebanon Through Our Booking Platform
           </h2>
 
@@ -15,7 +15,7 @@ export default function Banner() {
           </p>
 
           <div className="btn-group">
-            <button className="btn btn-primary">Book now</button>
+            {/* <button className="btn btn-primary">Book now</button> */}
           </div>
         </div>
       </section>

@@ -32,14 +32,17 @@ const Hotel = () => {
     const diffDays = Math.ceil(timeDiff / MILLISECONDS_PER_DAY);
     return diffDays;
   }
+  console.log(dates, "dates");
 
   const days = dayDifference(dates[0].endDate, dates[0].startDate);
 
   const fetchData = async () => {
     try {
-      const response = await axios.get(`http://localhost:5000/api/hotels/find/${id}`);
+      const response = await axios.get(
+        `http://localhost:5000/api/hotels/find/${id}`
+      );
       setData(response.data);
-      console.log(response.data)
+      console.log(response.data);
     } catch (error) {
       console.error(error);
     } finally {
@@ -67,6 +70,7 @@ const Hotel = () => {
 
     setSlideNumber(newSlideNumber);
   };
+  console.log(openModal, "modal");
 
   const handleClick = () => {
     if (user) {
@@ -76,10 +80,8 @@ const Hotel = () => {
     }
   };
 
-
   return (
     <div>
-    
       {loading ? (
         "loading"
       ) : (
@@ -141,8 +143,7 @@ const Hotel = () => {
                 <h1 className="hotelTitle">{data.title}</h1>
                 <p className="hotelDesc">{data.description}</p>
                 <p className="hotelDesc">Up to {data.guests} guests</p>
-                <img src= {data.url}/>
-
+                <img src={data.url} />
               </div>
               <div className="hotelDetailsPrice">
                 <h1>Perfect for a {days}-night stay!</h1>
@@ -158,10 +159,9 @@ const Hotel = () => {
               </div>
             </div>
           </div>
-      
         </div>
       )}
-      {openModal && <Reserve setOpen={setOpenModal} hotelId={id}/>}
+      {openModal && <Reserve setOpen={setOpenModal} hotelId={id} />}
     </div>
   );
 };

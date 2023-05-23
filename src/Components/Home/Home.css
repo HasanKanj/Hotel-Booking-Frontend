@@ -3,7 +3,8 @@
   flex-direction: column;
   align-items: center;
   gap: 30px;
-  
+  background-color: #e1f3fe;
+  height: 750px;
 }
 
 .homeContainers {
@@ -12,7 +13,18 @@
   flex-direction: column;
   align-items: center;
   gap: 30px;
-  background-color: #2dafde;
+  background-color: #e1f3fe;
+}
+.homeContainerss {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.shadi {
+  font-size: 40px;
 }
 
 .homeTitle {
@@ -33,7 +45,6 @@
   text-transform: uppercase;
   font-family: var(--ff-montserrat);
   margin-top: 35px;
-
 }
 
 .section-subtitle2 {
@@ -42,9 +53,7 @@
   text-transform: uppercase;
   font-family: var(--ff-montserrat);
   margin-top: 65px;
-
 }
-
 
 .section-subtitle3 {
   color: var(--bright-navy-blue);

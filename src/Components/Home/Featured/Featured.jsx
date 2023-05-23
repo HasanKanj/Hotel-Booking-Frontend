@@ -54,6 +54,27 @@ const Featured = () => {
               <h2 className="properties">{data[2]} properties</h2>
             </div>
           </div>
+          <div className="featuredItem">
+            <img src={img3} alt="" className="featuredImg" />
+            <div className="featuredTitles">
+              <h1 className="locations">Tyre</h1>
+              <h2 className="properties">{data[2]} properties</h2>
+            </div>
+          </div>
+          <div className="featuredItem">
+            <img src={img3} alt="" className="featuredImg" />
+            <div className="featuredTitles">
+              <h1 className="locations">Tyre</h1>
+              <h2 className="properties">{data[2]} properties</h2>
+            </div>
+          </div>
+          <div className="featuredItem">
+            <img src={img3} alt="" className="featuredImg" />
+            <div className="featuredTitles">
+              <h1 className="locations">Tyre</h1>
+              <h2 className="properties">{data[2]} properties</h2>
+            </div>
+          </div>
         </>
       )}
     </div>
