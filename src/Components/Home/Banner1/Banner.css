@@ -81,17 +81,26 @@
   transition: var(--transition);
 }
 
-.btn-primary {
+.btn-secondary {
   background: var(--bright-navy-blue);
   border-color: var(--bright-navy-blue);
 }
 
-.btn-primary:is(:hover, :focus) {
+.btn-secondary:is(:hover, :focus) {
   background: var(--yale-blue);
   border-color: var(--yale-blue);
 }
 
+.btn-primary {
+  background: black;
+  border-color: black;
 
+}
+
+.btn-priamry:is(:hover, :focus) {
+  background: darkgray;
+  border-color: darkgray;
+}
 
 .bodi {
   color: var(--white);

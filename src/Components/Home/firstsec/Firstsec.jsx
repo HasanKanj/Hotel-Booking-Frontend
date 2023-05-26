@@ -1,15 +1,8 @@
 export default function Firstsec() {
   return (
     <div>
-      <section className="py-12 bg-white sm:py-24 lg:py-32">
-        {" "}
+      <section className="py-12 bg-white sm:py-24 lg:py-11">
         <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h4 className="text-5xl font-medium text-gray-900">
-              Why choose Us
-            </h4>
-          </div>
-
           <div className="grid grid-cols-1 gap-6 px-6 mt-8 sm:px-0 lg:mt-16 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-12">
             <div className="overflow-hidden bg-white border border-gray-200 rounded-lg">
               <div className="px-4 py-6">

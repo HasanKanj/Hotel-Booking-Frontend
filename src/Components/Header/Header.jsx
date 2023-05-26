@@ -16,7 +16,7 @@ export default function Header() {
 
   
   return (
-    <nav className="w-full bg-white-700 shadow">
+<nav className="w-full bg-blue-00 shadow">
       <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
         <div>
           <div className="flex items-center justify-between py-3 md:py-5 md:block">
@@ -74,7 +74,7 @@ export default function Header() {
                 </NavLink>
               </li>
               <li className="text-black">
-                <NavLink to="/hotel" activeClassName="active">
+                <NavLink to="/hotels" activeClassName="active">
                   Hotels
                 </NavLink>
               </li>
@@ -91,7 +91,7 @@ export default function Header() {
             </ul>
             {user ? (
               user.username &&    <div className="flex items-center">
-              <span className="text-black mr-2">{user.username}</span>
+              <span className="text-black mr-2">{}</span>
               <button
                 className="text-black bg-black-600 rounded-md px-4 py-2 shadow hover:bg-white-800"
                 onClick={handleLogout}
@@ -123,8 +123,7 @@ export default function Header() {
           <div className="hidden space-x-2 md:inline-block">
             <Link
               to="/register"
-              className="px-4 py-2 text-black bg-black-600 rounded-md shadow hover:bg-white-800"
-            >
+              className="btn btn-secondary" >
               Sign up
             </Link>
             <Link to="/login" className="btn btn-primary">

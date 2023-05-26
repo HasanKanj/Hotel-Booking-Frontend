@@ -14,12 +14,11 @@ export default function Banner() {
             booking platform .
           </p>
 
-          <div className="btn-group">
-            {/* <button className="btn btn-primary">Book now</button> */}
+          <div className="searchhh">
+          <SearchHeader/>
           </div>
         </div>
       </section>
-      <SearchHeader/>
     </div>
   );
 }

@@ -1,30 +1,13 @@
 import "./featured.css";
-import { useEffect, useState } from "react";
 import img1 from "../../../assets/beirut.jpg";
 import img2 from "../../../assets/faraya.jpg";
 import img3 from "../../../assets/Tyre.jpg";
+import useFetch from "../../../hooks/useFetch";
 
 const Featured = () => {
-  const [data, setData] = useState(null);
-  const [loading, setLoading] = useState(true);
-
-  const fetchData = async () => {
-    try {
-      const response = await fetch(
-        "http://localhost:5000/api/hotels/countByCity?cities=Madrid,Beirut"
-      );
-      const jsonData = await response.json();
-      setData(jsonData);
-    } catch (error) {
-      console.log(error);
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  useEffect(() => {
-    fetchData();
-  }, []);
+  const { data, loading } = useFetch(
+    `http://localhost:5000/api/hotels/countByCity?cities=Madrid,Beirut`
+  );
 
   return (
     <div className="featured">
@@ -54,27 +37,7 @@ const Featured = () => {
               <h2 className="properties">{data[2]} properties</h2>
             </div>
           </div>
-          <div className="featuredItem">
-            <img src={img3} alt="" className="featuredImg" />
-            <div className="featuredTitles">
-              <h1 className="locations">Tyre</h1>
-              <h2 className="properties">{data[2]} properties</h2>
-            </div>
-          </div>
-          <div className="featuredItem">
-            <img src={img3} alt="" className="featuredImg" />
-            <div className="featuredTitles">
-              <h1 className="locations">Tyre</h1>
-              <h2 className="properties">{data[2]} properties</h2>
-            </div>
-          </div>
-          <div className="featuredItem">
-            <img src={img3} alt="" className="featuredImg" />
-            <div className="featuredTitles">
-              <h1 className="locations">Tyre</h1>
-              <h2 className="properties">{data[2]} properties</h2>
-            </div>
-          </div>
+     
         </>
       )}
     </div>

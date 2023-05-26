@@ -1,27 +1,10 @@
 import "./featuredProperties.css";
-import { useEffect, useState } from "react";
+import useFetch from "../../../hooks/useFetch";
 
 const FeaturedProperties = () => {
-  const [data, setData] = useState([]);
-  const [loading, setLoading] = useState(true);
-
-  const fetchData = async () => {
-    try {
-      const response = await fetch(
-        "http://localhost:5000/api/hotels?featured=true&limit=3"
-      );
-      const jsonData = await response.json();
-      setData(jsonData);
-    } catch (error) {
-      console.log(error);
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  useEffect(() => {
-    fetchData();
-  }, []);
+  const { data, loading } = useFetch(
+    `http://localhost:5000/api/hotels?featured=true&limit=3`
+  );
 
   return (
     <div className="fp">

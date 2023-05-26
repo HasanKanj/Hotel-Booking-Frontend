@@ -3,7 +3,10 @@
   justify-content: center;
   margin-top: 20px;
 }
-
+.labels{
+  color: white;
+  font-weight: bold;
+}
 .listWrapper {
   width: 100%;
   max-width: 1024px;
@@ -13,8 +16,8 @@
 
 .listSearch {
   flex: 1;
-  background-color: hsl(214, 57%, 51%);
-  padding: 40px;
+  background-color: rgb(0, 53, 128);
+  padding: 10px;
   border-radius: 10px;
   position: sticky;
   top: 10px;
@@ -60,20 +63,23 @@
   display: flex;
   justify-content: space-between;
   margin-bottom: 10px;
-  color: #ffffff;
-  font-weight: bold;
+  color: #fffafa;
   font-size: 12px;
 }
-.shadio{
-  color: white;
-}
+
 .lsOptionInput{
-  width: 80px;
-  color: black;
-
+  width: 50px;
 }
 
-
+.listSearch>button{
+  padding: 10px;
+  background-color: #0071c2;
+  color: white;
+  border: none;
+  width: 100%;
+  font-weight: 500;
+  cursor: pointer;
+}
 
 .listResult {
   flex: 3;

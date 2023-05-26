@@ -6,10 +6,10 @@ export default function About() {
     <div className="max-w-5xl px-4 mx-auto sm:px-6 lg:px-8">
         <div className="mx-auto text-left md:max-w-lg lg:max-w-2xl md:text-center">
             <h2 className="text-3xl font-bold leading-tight text-black sm:text-4xl lg:text-5xl lg:leading-tight">
-                I am building a product that can
+                I am building a Website that can
                 <span className="relative inline-block">
-                    <span className="absolute inline-block w-full h-2 bg-yellow-300 bottom-1.5"></span>
-                    <span className="relative"> solve developer’s pain </span>
+                    <span className="absolute inline-block w-full h-2 bg-blue-500 bottom-1.5"></span>
+                    <span className="relative"> solve visitors pain </span>
                 </span>
             </h2>
         </div>
