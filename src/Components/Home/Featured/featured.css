@@ -2,7 +2,7 @@
   width: 100%;
   max-width: 1271px;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Use auto-fit and minmax for responsive grid columns */
   justify-items: center;
   gap: 20px;
   z-index: 1;
@@ -14,7 +14,7 @@
   border-radius: 10px;
   overflow: hidden;
   height: 250px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Increase shadow intensity */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 }
 
 .featuredImg {
@@ -38,7 +38,7 @@
 }
 
 .featuredItem:hover .featuredImg {
-  transform: scale(1.1); /* Apply zoom effect only to the image */
+  transform: scale(1.1);
 }
 
 .properties {

@@ -1,7 +1,7 @@
 import { useState, useRef } from "react";
 import axios from "axios";
 import emailjs from "emailjs-com";
-
+import './contact.css'
 export default function Contactus() {
   const [formData, setFormData] = useState({
     name: "",
@@ -151,6 +151,7 @@ export default function Contactus() {
                       id="name"
                       value={name}
                       onChange={onChange}
+                      required
                       className="text-body-color border-[f0f0f0] focus:border-primary w-full rounded border py-3 px-[14px] text-base outline-none focus-visible:shadow-none"
                     />
                   </div>
@@ -172,6 +173,7 @@ export default function Contactus() {
                       className="text-body-color border-[f0f0f0] focus:border-primary w-full rounded border py-3 px-[14px] text-base outline-none focus-visible:shadow-none"
                       name="phoneNumber"
                       id="phone"
+                      required
                       value={phoneNumber}
                       onChange={onChange}
                     />
@@ -185,15 +187,11 @@ export default function Contactus() {
                       id="message"
                       value={message}
                       onChange={onChange}
+                      required
                     ></textarea>
                   </div>
                   <div>
-                    <button
-                      type="submit"
-                      className="bg-blue-500 border-primary w-full rounded border p-3 text-white transition hover:bg-opacity-90"
-                    >
-                      Send Message
-                    </button>
+                  <button className="contbtn" type="submit">Submit</button>
                   </div>
                 </form>
                 <div>

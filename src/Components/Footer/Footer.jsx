@@ -3,7 +3,7 @@ export default function Footers() {
    
   
   <footer aria-label="Site Footer" className="bg-white">
-    <div className="mx-auto max-w-screen-xl px-4 pb-6 pt-16 sm:px-6 lg:px-8">
+    <div className="mx-auto max-w-screen-xl px-4 pb-6  sm:px-6 lg:px-8">
      
   
       <div

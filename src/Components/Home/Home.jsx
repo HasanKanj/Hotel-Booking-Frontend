@@ -21,7 +21,6 @@ export default function Home() {
           <button className="btn btn-primary">More destintionS</button>
         </div>
 
-        <Steps />
         <div className="homeContainers">
           <p className="section-subtitle2">Explore by types of stays</p>
           <h2 className="h2 section-title">CHECKOUT OUR PROPERTY TYPES</h2>
@@ -32,6 +31,8 @@ export default function Home() {
           </p>
           <PropertyList />
         </div>
+        <Steps />
+
         <div className="homeContainerss">
           <p className="section-subtitle3">TOP GUESTS LOVE</p>
           <h2 className="h2 section-title">CHECKOUT OUR TOP HOTELS</h2>
