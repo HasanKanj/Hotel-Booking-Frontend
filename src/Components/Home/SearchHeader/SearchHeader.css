@@ -38,13 +38,12 @@
   margin: 20px 0px;
 }
 
-
-
 .headerSearchss {
-  height: 80px;
+  height: auto; /* Adjust height to auto for responsiveness */
   background-color: white;
   border: 3px solid #23b4b0;
   display: flex;
+  flex-wrap: wrap; /* Allow flex items to wrap to the next line */
   align-items: center;
   justify-content: space-around;
   padding: 10px 0px;
@@ -53,25 +52,23 @@
   bottom: 89px;
   width: 100%;
   max-width: 1224px;
-
 }
 
 .headerIconss {
-  color:#3B79C9;
+  color: #3B79C9;
 }
 
 .headerSearchItemss {
   display: flex;
   align-items: center;
   gap: 10px;
-  
+  margin: 5px; /* Add margin for spacing between items */
 }
 
 .headerSearchInputss {
   border: none;
   outline: none;
   color: black;
-
 }
 
 .headerSearchTextss {
@@ -81,7 +78,8 @@
 
 .dates {
   position: absolute;
-  top: 50px;
+  left: 20px; /* Adjust the left position to move the date picker to the left */
+  top: 60px;
   z-index: 2;
 }
 
@@ -123,3 +121,41 @@
 .optionCounterButton:disabled {
   cursor: not-allowed;
 }
+
+/* Media query for responsiveness */
+
+@media screen and (max-width: 768px) {
+  .headerSearchss {
+    bottom: 30px;
+    height: auto;
+    flex-wrap: wrap;
+    padding: 20px 0px; /* Increase padding for more space */
+  }
+
+  .headerSearchItemss {
+    margin: 10px; /* Increase margin for more space between fields */
+  }
+
+  .headerSearchInputss {
+    height: 40px; /* Increase height for the input field */
+    width: 100%;
+    max-width: 250px; /* Adjust max-width as needed */
+  }
+
+  .headerSearchTextss {
+    font-size: 14px; /* Decrease font size for the date and options text */
+  }
+
+  .dates {
+    top: 60px; /* Adjust top position for the date picker */
+  }
+
+  .options {
+    top: 60px; /* Adjust top position for the options menu */
+  }
+
+  .optionItem {
+    width: 180px; /* Adjust width of option items */
+  }
+}
+

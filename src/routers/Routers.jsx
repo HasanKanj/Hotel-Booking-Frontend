@@ -10,6 +10,10 @@ import Contactus from "../Components/ContactUs/Contactus";
 import Page404 from "../Components/404 Page/Page404";
 import List from "../Components/list/List";
 import Hotel from "../Components/hotel/Hotel";
+import LogRocket from 'logrocket';
+LogRocket.init('y0seyh/react');
+
+
 const Routers = () => {
   return (
     <div className="App">

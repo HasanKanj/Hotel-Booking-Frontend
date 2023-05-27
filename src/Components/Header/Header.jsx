@@ -91,9 +91,9 @@ export default function Header() {
 
         <div>
           {user ? (
-            user.username && (
+            user.details.username && (
               <div className="flex items-center">
-                <span className="text-black mr-2">{user.username}</span>
+                <span className="text-black mr-2">{user.details.username}</span>
                 <button className="Btnnn" onClick={handleLogout}>
                   <div className="sign">
                     <svg viewBox="0 0 512 512">

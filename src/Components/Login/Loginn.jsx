@@ -6,13 +6,10 @@ import { useContext } from "react";
 import axios from "axios";
 
 export default function Loginn() {
-
   const [credentials, setCredentials] = useState({
     email: undefined,
     password: undefined,
   });
-
- 
 
   const { loading, error, dispatch } = useContext(AuthContext);
 
@@ -30,7 +27,10 @@ export default function Loginn() {
         "http://localhost:5000/api/auth/login",
         credentials
       );
-      dispatch({ type: "LOGIN_SUCCESS", payload: res.data.details });
+      dispatch({
+        type: "LOGIN_SUCCESS",
+        payload: { details: res.data.details, token: res.data.token },
+      });
       navigate("/");
     } catch (err) {
       dispatch({ type: "LOGIN_FAILURE", payload: err.response.data });

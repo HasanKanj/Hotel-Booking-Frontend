@@ -1,8 +1,16 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useContext } from "react";
 import axios from "axios";
 import emailjs from "emailjs-com";
-import './contact.css'
+import { AuthContext } from "../../context/AuthContext";
+import { ToastContainer } from "react-toastify";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+import "./contact.css";
+
 export default function Contactus() {
+  const { user } = useContext(AuthContext);
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -31,8 +39,18 @@ export default function Contactus() {
   const onSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:5000/api/contact/create", formData);
+      // Check if user is logged in
+      if (!user) {
+        // Display alert asking the user to register or login
+        toast.error("Please register or login.");
+        return; // Exit the onSubmit function
+      }
+
+      // Send email
       await sendEmail(e);
+
+      // Submit the form data to your API or perform any desired actions
+      await axios.post("http://localhost:5000/api/contact/create", formData);
 
       setFormData({
         name: "",
@@ -44,6 +62,7 @@ export default function Contactus() {
       console.log("error", err.response.data);
     }
   };
+
   const { name, email, phoneNumber, message } = formData;
 
   const onChange = (e) => {
@@ -51,6 +70,8 @@ export default function Contactus() {
   };
   return (
     <div>
+      <ToastContainer position="bottom-right" />
+
       <section className="relative z-10 overflow-hidden bg-white py-20 lg:py-[120px]">
         <div className="container mx-auto">
           <div className="-mx-4 flex flex-wrap lg:justify-between">
