@@ -16,28 +16,32 @@ const Reserve = ({ setOpen, hotelId }) => {
 
 
   const getDatesInRange = (startDate, endDate) => {
-    const start = new Date(startDate);
-    const end = new Date(endDate);
+    if (startDate && endDate) {
+      const start = new Date(startDate);
+      const end = new Date(endDate);
 
-    const date = new Date(start.getTime());
+      const date = new Date(start.getTime());
 
-    const dates = [];
+      const dates = [];
 
-    while (date <= end) {
-      dates.push(new Date(date).getTime());
-      date.setDate(date.getDate() + 1);
+      while (date <= end) {
+        dates.push(new Date(date).getTime());
+        date.setDate(date.getDate() + 1);
+      }
+
+      return dates;
     }
 
-    return dates;
+    return [];
   };
-  
-  const alldates = getDatesInRange(dates[0].startDate, dates[0].endDate);
 
+  const alldates = getDatesInRange(
+    dates && dates.length > 0 ? dates[0].startDate : null,
+    dates && dates.length > 0 ? dates[0].endDate : null
+  );
   const fetchRooms = async () => {
     try {
-      const response = await axios.get(
-        `http://localhost:5000/api/rooms/`
-      );
+      const response = await axios.get(`http://localhost:5000/api/rooms/`);
       console.log(response);
       setRoomsData(response.data);
     } catch (error) {
@@ -69,10 +73,19 @@ const Reserve = ({ setOpen, hotelId }) => {
 
   const handleClick = async () => {
     try {
+      // Log selected rooms
+      console.log("Selected Rooms:", selectedRooms);
+  
+      // Fetch the hotel details from the server
+      const hotelResponse = await axios.get(`http://localhost:5000/api/hotels/find/${hotelId}`);
+      const hotelDetails = hotelResponse.data;
+      console.log("Hotel Details:", hotelDetails);
+  
+      // Update room availability
       await Promise.all(
         selectedRooms.map((roomId) => {
           const res = axios.put(
-            `http://localhost:5000/api/rooms//availability/${roomId}`,
+            `http://localhost:5000/api/rooms/availability/${roomId}`,
             {
               dates: alldates,
             }
@@ -80,28 +93,39 @@ const Reserve = ({ setOpen, hotelId }) => {
           return res.data;
         })
       );
-
+  
+      const username = user.details.username;
+      const email = user.details.email;
+      const phone = user.details.phone;
+  
       const currentDate = new Date().toLocaleString();
-
+  
       const params = {
-       
+        username: username,
+        email: email,
+        phone: phone,
         date: currentDate,
-      };
+        hotelName: hotelDetails.name,
+        hotelAddress: hotelDetails.address,
+        hotelcity: hotelDetails.city,
+        hotelguests: hotelDetails.guests,
 
-      emailjs
-        .send(
-          "service_i65z4yo",
-          "template_89xupsl",
-          params,
-          "X3GWKBc5fNzTxb_rm"
-        )
+
+      };
+  
+      emailjs.send(
+        "service_i65z4yo",
+        "template_kz0prl9",
+        params,
+        "X3GWKBc5fNzTxb_rm"
+      )
         .then((result) => {
           console.log(result.text);
         })
         .catch((error) => {
           console.log(error.text);
         });
-
+  
       setOpen((prev) => !prev);
     } catch (err) {
       console.error(err);

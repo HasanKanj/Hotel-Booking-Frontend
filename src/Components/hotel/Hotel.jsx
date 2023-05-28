@@ -34,7 +34,7 @@ const Hotel = () => {
   }
   console.log(dates, "dates");
 
-  const days = dayDifference(dates[0].endDate, dates[0].startDate);
+  const days = dates && dates[0] ? dayDifference(dates[0].endDate, dates[0].startDate) : 0;
 
   const fetchData = async () => {
     try {
@@ -145,7 +145,7 @@ const Hotel = () => {
                 <img src={data.url} />
               </div>
               <div className="hotelDetailsPrice">
-                <h1>Perfect for a {days}-night stay!</h1>
+                <h1>Perfect for a {dates ? `${days}-night stay!` : ''}</h1>
                 <span>
                   Located in the real heart of Krakow, this property has an
                   excellent location score of 9.8!

@@ -45,10 +45,7 @@ SearchItem.propTypes = {
     cheapestPrice: PropTypes.number,
     rating: PropTypes.number,
     description: PropTypes.string,
-    _id: PropTypes.number,
-
-
-
+    _id: PropTypes.string, // Update the prop type to PropTypes.string
   })
 };
 

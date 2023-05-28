@@ -1,6 +1,9 @@
-import  { useState } from "react";
+import { useState } from "react";
 import axios from "axios";
-
+import { Link } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 const API_URL = "http://localhost:5000/api/auth/register";
 
 export default function Register() {
@@ -36,29 +39,28 @@ export default function Register() {
         email,
         password,
         phone,
-        
       });
 
       if (response.status === 200) {
-        alert("Registration Successful.");
+        toast.error("Registration Successful..");
         setUsername("");
         setEmail("");
         setPassword("");
         setPhone("");
-        
       } else {
-        console.log(response.data)
+        console.log(response.data);
 
-        alert("Registration failed. Please try again.");
+        toast.error("Registration failed. Please try again.");
       }
     } catch (error) {
-      alert("Registration failed. Please try again.");
-      
+      toast.error("Registration failed. Please try again.");
     }
   }
 
   return (
     <div>
+            <ToastContainer position="bottom-right" />
+
       <section className="bg-white">
         <div className="">
           <div className="flex items-center justify-center px-4 py-10 bg-white sm:px-6 lg:px-8 sm:py-16 lg:py-24">
@@ -68,13 +70,13 @@ export default function Register() {
               </h2>
               <p className="mt-2 text-base text-gray-600">
                 Already have an account?{" "}
-                <a
-                  href="#"
+                <Link
+                  to={"/login"}
                   title=""
                   className="font-medium text-blue-600 transition-all duration-200 hover:text-blue-700 hover:underline focus:text-blue-700"
                 >
                   Login
-                </a>
+                </Link>
               </p>
 
               <form onSubmit={registerUser} className="mt-8">

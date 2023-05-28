@@ -56,7 +56,7 @@ export default function Loginn() {
                   Create a free account{" "}
                 </Link>
               </p>
-              <form onSubmit className="mt-8">
+              <form onSubmit={handleClick} className="mt-8">
                 <div className="space-y-5">
                   <div>
                     <label

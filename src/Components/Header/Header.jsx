@@ -16,7 +16,9 @@ export default function Header() {
   };
 
   return (
+
     <nav className="w-full bg-blue-00 shadow">
+      
       <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
         <div className="flex items-center justify-between py-3 md:py-5 md:block">
           <Link to="/">
@@ -67,22 +69,22 @@ export default function Header() {
         >
           <ul className="flex items-center justify-center space-x-6">
             <li className="text-black">
-              <NavLink exact to="/" activeClassName="active">
+              <NavLink  to="/" activeclassname="active">
                 Home
               </NavLink>
             </li>
             <li className="text-black">
-              <NavLink to="/hotels" activeClassName="active">
+              <NavLink to="/hotels" activeclassname="active">
                 Hotels
               </NavLink>
             </li>
             <li className="text-black">
-              <NavLink to="/About" activeClassName="active">
+              <NavLink to="/About" activeclassname="active">
                 About Us
               </NavLink>
             </li>
             <li className="text-black">
-              <NavLink to="/Contactus" activeClassName="active">
+              <NavLink to="/Contactus" activeclassname="active">
                 Contact Us
               </NavLink>
             </li>
