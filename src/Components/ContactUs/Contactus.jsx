@@ -197,6 +197,12 @@ export default function Contactus() {
                       required
                       value={phoneNumber}
                       onChange={onChange}
+                      onKeyPress={(e) => {
+                        const pattern = /[0-9]/;
+                        if (!pattern.test(e.key)) {
+                          e.preventDefault();
+                        }
+                      }}
                     />
                   </div>
                   <div className="mb-6">
@@ -212,7 +218,9 @@ export default function Contactus() {
                     ></textarea>
                   </div>
                   <div>
-                  <button className="contbtn" type="submit">Submit</button>
+                    <button className="contbtn" type="submit">
+                      Submit
+                    </button>
                   </div>
                 </form>
                 <div>

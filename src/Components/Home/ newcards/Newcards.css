@@ -189,3 +189,24 @@
 }
 
 .package .btn { margin-inline: auto; }
+.popular-card .card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.popular-card:hover .card-img img {
+  transform: scale(1.1);
+}
+
+.package-card .card-banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.package-card:hover .card-banner img {
+  transform: scale(1.1);
+}

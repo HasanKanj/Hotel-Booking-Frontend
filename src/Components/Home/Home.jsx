@@ -19,7 +19,7 @@ export default function Home() {
           {/* <h1 className="shadi">Top destination</h1> */}
 
           <Newcards />
-          <button className="btn btn-primary">More destintionS</button>
+          <button className="btn btn-secondary">More destintionS</button>
         </div>
 
         <div className="homeContainers">
@@ -47,7 +47,6 @@ export default function Home() {
         <Test />
       </div>
       <Slider />
-
     </div>
   );
 }
