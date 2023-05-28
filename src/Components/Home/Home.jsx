@@ -1,5 +1,5 @@
 import "../Home/Home.css";
-import Featured from "../../Components/Home/Featured/Featured";
+// import Featured from "../../Components/Home/Featured/Featured";
 import FeaturedProperties from "../Home/featuredProperties/FeaturedProperties";
 import PropertyList from "../Home/propertyList/PropertyList";
 import Steps from "../Home/Steps/Steps";
@@ -8,6 +8,7 @@ import Banner from "./Banner1/Banner";
 import Firstsec from "./firstsec/Firstsec";
 import Test from "./Testimonials/Test";
 import Slider from "./Slider/slider";
+import Newcards from "./ newcards/Newcards";
 export default function Home() {
   return (
     <div>
@@ -15,9 +16,9 @@ export default function Home() {
       <Firstsec />
       <div>
         <div className="homeContainer">
-          <h1 className="shadi">Top destination</h1>
+          {/* <h1 className="shadi">Top destination</h1> */}
 
-          <Featured />
+          <Newcards />
           <button className="btn btn-primary">More destintionS</button>
         </div>
 

@@ -55,7 +55,7 @@
 }
 
 .headerIconss {
-  color: #3B79C9;
+  color: #3b79c9;
 }
 
 .headerSearchItemss {
@@ -126,12 +126,16 @@
 
 @media screen and (max-width: 768px) {
   .headerSearchss {
-    bottom: 30px;
+    bottom: -51px;
+    right: 50px;
     height: auto;
     flex-wrap: wrap;
-    padding: 20px 0px; /* Increase padding for more space */
+    margin: 4px -45px;
   }
 
+  .rdrCalendarWrapper {
+    margin: 164px -42px;
+  }
   .headerSearchItemss {
     margin: 10px; /* Increase margin for more space between fields */
   }
@@ -151,11 +155,10 @@
   }
 
   .options {
-    top: 60px; /* Adjust top position for the options menu */
+    margin: 180px 1px; /* Adjust top position for the options menu */
   }
 
   .optionItem {
     width: 180px; /* Adjust width of option items */
   }
 }
-

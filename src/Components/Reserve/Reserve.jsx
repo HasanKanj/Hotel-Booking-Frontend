@@ -3,6 +3,7 @@ import { faCircleXmark } from "@fortawesome/free-solid-svg-icons";
 import "./Reserve.css";
 import { useContext, useState, useEffect } from "react";
 import { SearchContext } from "../../context/SearchContext";
+import { AuthContext } from "../../context/AuthContext";
 import axios from "axios";
 import PropTypes from "prop-types";
 import emailjs from "emailjs-com";
@@ -11,12 +12,8 @@ const Reserve = ({ setOpen, hotelId }) => {
   const [selectedRooms, setSelectedRooms] = useState([]);
   const [roomsData, setRoomsData] = useState([]);
   const { dates } = useContext(SearchContext);
-  const username = localStorage.getItem("username");
-  const email = localStorage.getItem("email");
-  const phone = localStorage.getItem("phone");
-console.log(username)
-console.log(email)
-console.log(username)
+  const { user } = useContext(AuthContext);
+
 
   const getDatesInRange = (startDate, endDate) => {
     const start = new Date(startDate);
@@ -87,9 +84,7 @@ console.log(username)
       const currentDate = new Date().toLocaleString();
 
       const params = {
-        username: username,
-        email: email,
-        phone: phone,
+       
         date: currentDate,
       };
 

@@ -4,7 +4,6 @@
   align-items: center;
   gap: 30px;
   background-color: #e1f3fe;
-  height: 550px;
 }
 
 .homeContainers {
@@ -23,7 +22,9 @@
 }
 
 .shadi {
-  font-size: 40px;
+  font-size: var(--title-font-size);
+  font-weight: 700;
+  margin-top: 4rem;
 }
 
 .homeTitle {
