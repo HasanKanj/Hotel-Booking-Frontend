@@ -10,9 +10,9 @@ export default function Header() {
   const navigate = useNavigate();
 
   const handleLogout = () => {
-    sessionStorage.removeItem("token");
+    localStorage.removeItem("token");
     dispatch({ type: "LOGOUT" });
-    navigate("/login");
+    navigate("/");
   };
 
   return (

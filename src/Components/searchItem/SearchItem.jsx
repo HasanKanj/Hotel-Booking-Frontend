@@ -15,7 +15,7 @@ const SearchItem = ({ item }) => {
     } else {
       // Store the desired URL in local storage
       localStorage.setItem("desiredURL", `/hotels/${item._id}`);
-      window.location.href = "/login";
+      navigate("/login");
     }
   };
 
@@ -45,11 +45,15 @@ const SearchItem = ({ item }) => {
         <div className="siDetailTexts">
           <span className="siPrice">${item.cheapestPrice}</span>
           <span className="siTaxOp">Includes taxes and fees</span>
-          <Link to={`/hotels/${item._id}`}>
+          {user ? (
+            <Link to={`/hotels/${item._id}`}>
+              <button className="siCheckButton">See availability</button>
+            </Link>
+          ) : (
             <button className="siCheckButton" onClick={handleClick}>
               See availability
             </button>
-          </Link>
+          )}
         </div>
       </div>
     </div>
@@ -64,7 +68,7 @@ SearchItem.propTypes = {
     cheapestPrice: PropTypes.number,
     rating: PropTypes.number,
     description: PropTypes.string,
-    _id: PropTypes.string, // Update the prop type to PropTypes.string
+    _id: PropTypes.string,
   }),
 };
 
