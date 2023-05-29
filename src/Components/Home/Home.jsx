@@ -15,11 +15,11 @@ export default function Home() {
       <Banner />
       <Firstsec />
       <div>
-        <div className="homeContainer">
+        <div className="">
           {/* <h1 className="shadi">Top destination</h1> */}
 
           <Newcards />
-          <button className="btn btn-secondary">More destintionS</button>
+          {/* <button className="btn btn-secondary">More destinations</button> */}
         </div>
 
         <div className="homeContainers">

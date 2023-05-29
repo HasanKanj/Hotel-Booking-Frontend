@@ -217,8 +217,8 @@ export default function Contactus() {
                       required
                     ></textarea>
                   </div>
-                  <div>
-                    <button className="contbtn" type="submit">
+                  <div className="baton">
+                    <button className="btnn btnn-secondary" type="submit">
                       Submit
                     </button>
                   </div>

@@ -1,15 +1,14 @@
-.popular { padding-block: var(--section-padding); }
-.containersss { padding-inline: 15px; }
+/* Default styles */
 
-.popular-list,
-.popular-list > li:not(:last-child) { margin-bottom: 30px; }
+.popular {
+  padding-block: var(--section-padding);
+}
 
-
-.popular-list{
-    display: flex;
-    gap: 20px;
-    width: 80%;
-    margin: 0 auto;
+.popular-list {
+  display: flex;
+  gap: 20px;
+  width: 65%;
+  margin: 0 auto;
 }
 
 .popular-card {
@@ -18,6 +17,7 @@
   border-radius: var(--radius-25);
   height: 430px;
 }
+
 .section-subtitle {
   color: var(--bright-navy-blue);
   font-size: var(--fs-5);
@@ -25,12 +25,20 @@
   font-family: var(--ff-montserrat);
   margin-bottom: 8px;
 }
-.popular-card .card-img { height: 100%; }
+
+.popular-card .card-img {
+  height: 100%;
+}
 
 .popular-card .card-img img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.popular-card:hover .card-img img {
+  transform: scale(1.1);
 }
 
 .popular-card .card-content {
@@ -42,7 +50,6 @@
   border-radius: var(--radius-25);
   padding: 20px;
 }
-
 
 .popular-card .card-rating {
   background: var(--bright-navy-blue);
@@ -66,25 +73,29 @@
   margin-bottom: 8px;
 }
 
-.popular-card .card-title { margin-bottom: 5px; }
+.popular-card .card-title {
+  margin-bottom: 5px;
+}
 
-.popular-card :is(.card-subtitle, .card-title) > a { color: inherit; }
+.popular-card :is(.card-subtitle, .card-title) > a {
+  color: inherit;
+}
 
-.popular .btn { margin-inline: auto; }
+.popular .btn {
+  margin-inline: auto;
+}
 
+.package {
+  padding-block: var(--section-padding);
+}
 
+.package-list {
+  margin-bottom: 40px;
+}
 
-
-
-/*-----------------------------------*\
- * #PACKAGE
-\*-----------------------------------*/
-
-.package { padding-block: var(--section-padding); }
-
-.package-list { margin-bottom: 40px; }
-
-.package-list > li:not(:last-child) { margin-bottom: 30px; }
+.package-list > li:not(:last-child) {
+  margin-bottom: 30px;
+}
 
 .package-card {
   background: var(--cultured);
@@ -92,17 +103,28 @@
   border-radius: 15px;
 }
 
-.package-card .card-banner { height: 250px; }
+.package-card .card-banner {
+  height: 250px;
+}
 
 .package-card .card-banner img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 0.3s ease;
 }
 
-.package-card .card-content { padding: 30px 20px; }
+.package-card:hover .card-banner img {
+  transform: scale(1.1);
+}
 
-.package-card .card-title { margin-bottom: 15px; }
+.package-card .card-content {
+  padding: 30px 20px;
+}
+
+.package-card .card-title {
+  margin-bottom: 15px;
+}
 
 .package-card .card-text {
   line-height: 1.6;
@@ -121,7 +143,9 @@
   border-radius: 50px;
 }
 
-.card-meta-item { position: relative; }
+.card-meta-item {
+  position: relative;
+}
 
 .card-meta-item:not(:last-child)::after {
   content: "";
@@ -164,7 +188,9 @@
   margin-bottom: 10px;
 }
 
-.package-card .card-price .reviews { font-size: var(--fs-5); }
+.package-card .card-price .reviews {
+  font-size: var(--fs-5);
+}
 
 .package-card .card-rating {
   display: flex;
@@ -174,7 +200,9 @@
   font-size: 14px;
 }
 
-.package-card .card-rating ion-icon:last-child { color: hsl(0, 0%, 80%); }
+.package-card .card-rating ion-icon:last-child {
+  color: hsl(0, 0%, 80%);
+}
 
 .package-card .price {
   font-size: var(--fs-2);
@@ -188,25 +216,45 @@
   font-weight: initial;
 }
 
-.package .btn { margin-inline: auto; }
-.popular-card .card-img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
+.package .btn {
+  margin-inline: auto;
 }
 
-.popular-card:hover .card-img img {
-  transform: scale(1.1);
-}
+/* Responsive styles for mobile media */
+@media only screen and (max-width: 767px) {
+  .popular-list {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 
-.package-card .card-banner img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
+  .popular-card {
+    width: 100%;
+    height: auto;
+  }
 
-.package-card:hover .card-banner img {
-  transform: scale(1.1);
+  .popular-card .card-img {
+    height: 250px;
+  }
+
+  .popular-card .card-content {
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-radius: 0;
+    padding: 15px;
+  }
+
+  .package-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .package-card {
+    width: 100%;
+  }
+
+  .package-card .card-banner {
+    height: 200px;
+  }
 }

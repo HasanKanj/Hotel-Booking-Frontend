@@ -6,7 +6,7 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./SearchHeader.css";
 import { DateRange } from "react-date-range";
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect, useRef } from "react";
 import "react-date-range/dist/styles.css"; // main css file
 import "react-date-range/dist/theme/default.css"; // theme css file
 import { format } from "date-fns";
@@ -51,6 +51,33 @@ const SearchHeader = ({ type }) => {
     navigate("/hotels", { state: { destination, dates, options } });
   };
 
+  const calendarWrapperRef = useRef(null);
+  const optionsWrapperRef = useRef(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        calendarWrapperRef.current &&
+        !calendarWrapperRef.current.contains(event.target)
+      ) {
+        setOpenDate(false);
+      }
+
+      if (
+        optionsWrapperRef.current &&
+        !optionsWrapperRef.current.contains(event.target)
+      ) {
+        setOpenOptions(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
   return (
     <div className="headerss">
       {type !== "list" && (
@@ -78,16 +105,20 @@ const SearchHeader = ({ type }) => {
                 dates[0].endDate,
                 "MM/dd/yyyy"
               )}`}</span>
-              {openDate && (
-                <DateRange
-                  editableDateInputs={true}
-                  onChange={(item) => setDates([item.selection])}
-                  moveRangeOnFirstSelection={false}
-                  ranges={dates}
-                  className="dates"
-                  minDate={new Date()}
-                />
-              )}
+              <div className="calendarWrapper" ref={calendarWrapperRef}>
+                {openDate && (
+                  <div className="calendarWrapper">
+                    <DateRange
+                      editableDateInputs={true}
+                      onChange={(item) => setDates([item.selection])}
+                      moveRangeOnFirstSelection={false}
+                      ranges={dates}
+                      className="dates"
+                      minDate={new Date()}
+                    />
+                  </div>
+                )}
+              </div>
             </div>
             <div className="headerSearchItemss">
               <FontAwesomeIcon icon={faPerson} className="headerIconss" />
@@ -96,7 +127,7 @@ const SearchHeader = ({ type }) => {
                 className="headerSearchTextss"
               >{`${options.adult} adult · ${options.children} children · ${options.room} room`}</span>
               {openOptions && (
-                <div className="options">
+                <div className="options" ref={optionsWrapperRef}>
                   <div className="optionItem">
                     <span className="optionText">Adult</span>
                     <div className="optionCounter">
@@ -180,4 +211,5 @@ SearchHeader.propTypes = {
     type: PropTypes.string,
   }),
 };
+
 export default SearchHeader;

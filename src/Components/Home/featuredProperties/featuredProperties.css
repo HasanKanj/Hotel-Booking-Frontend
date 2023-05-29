@@ -12,12 +12,19 @@
   display: flex;
   flex-direction: column;
   transition: transform 0.3s ease-in-out;
+  margin-left: 20px; /* Add left margin for mobile */
+  margin-right: 20px; /* Add right margin for mobile */
 }
 
 .fpImg {
   width: 100%;
   height: 250px;
   object-fit: cover;
+  transition: transform 0.3s ease-in-out; /* Add transition for zoom effect */
+}
+
+.fpImg:hover {
+  transform: scale(1.1); /* Zoom in on hover for both mobile and desktop */
 }
 
 .fpName {
@@ -52,9 +59,7 @@
 @media screen and (max-width: 768px) {
   .fp {
     grid-template-columns: 1fr;
-  }
-
-  .fpItem:hover {
-    transform: none; /* Remove the transform scale on hover */
+    margin-left: 20px; /* Add left margin for mobile */
+    margin-right: 20px; /* Add right margin for mobile */
   }
 }

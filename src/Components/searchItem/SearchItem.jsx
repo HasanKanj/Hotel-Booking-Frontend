@@ -1,9 +1,24 @@
 import { Link } from "react-router-dom";
 import "./searchItem.css";
 import PropTypes from "prop-types";
-
+import { useContext } from "react";
+import { AuthContext } from "../../context/AuthContext";
+import { useNavigate } from "react-router-dom";
 
 const SearchItem = ({ item }) => {
+  const { user } = useContext(AuthContext);
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    if (user) {
+      navigate(`/hotels/${item._id}`);
+    } else {
+      // Store the desired URL in local storage
+      localStorage.setItem("desiredURL", `/hotels/${item._id}`);
+      window.location.href = "/login";
+    }
+  };
+
   return (
     <div className="searchItem">
       <img src={item.url} alt="" className="siImg" />
@@ -21,15 +36,19 @@ const SearchItem = ({ item }) => {
         </span>
       </div>
       <div className="siDetails">
-        {item.rating && <div className="siRating">
-          <span>Excellent</span>
-          <button>{item.rating}</button>
-        </div>}
+        {item.rating && (
+          <div className="siRating">
+            <span>Excellent</span>
+            <button>{item.rating}</button>
+          </div>
+        )}
         <div className="siDetailTexts">
           <span className="siPrice">${item.cheapestPrice}</span>
           <span className="siTaxOp">Includes taxes and fees</span>
           <Link to={`/hotels/${item._id}`}>
-          <button className="siCheckButton">See availability</button>
+            <button className="siCheckButton" onClick={handleClick}>
+              See availability
+            </button>
           </Link>
         </div>
       </div>
@@ -46,8 +65,7 @@ SearchItem.propTypes = {
     rating: PropTypes.number,
     description: PropTypes.string,
     _id: PropTypes.string, // Update the prop type to PropTypes.string
-  })
+  }),
 };
-
 
 export default SearchItem;

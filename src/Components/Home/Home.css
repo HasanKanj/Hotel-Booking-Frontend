@@ -12,6 +12,7 @@
   flex-direction: column;
   align-items: center;
   gap: 30px;
+  margin-bottom: 50px;
 }
 .homeContainerss {
   margin-top: 50px;
@@ -38,12 +39,8 @@
   font-size: 45px;
   color: hsl(206, 30%, 26%);
   font-weight: 700;
-  transition: transform 0.3s ease;
+}
 
-}
-.section-title:hover {
-  transform: scale(1.1);
-}
 .section-subtitle {
   color: var(--bright-navy-blue);
   font-size: var(---5);

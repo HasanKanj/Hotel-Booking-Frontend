@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
 import { useContext } from "react";
-
 import axios from "axios";
 
 export default function Loginn() {
@@ -31,7 +30,17 @@ export default function Loginn() {
         type: "LOGIN_SUCCESS",
         payload: { details: res.data.details, token: res.data.token },
       });
-      navigate("/");
+
+      // Retrieve the selected date from local storage
+      const selectedDate = localStorage.getItem("selectedDate");
+
+      // Navigate to the desired URL or home page
+      const desiredURL = localStorage.getItem("desiredURL");
+      if (desiredURL) {
+        navigate(`${desiredURL}?date=${selectedDate}`);
+      } else {
+        navigate("/");
+      }
     } catch (err) {
       dispatch({ type: "LOGIN_FAILURE", payload: err.response.data });
     }
@@ -109,14 +118,13 @@ export default function Loginn() {
 
                   <div>
                     <button
-                         disabled={loading}
-                         onClick={handleClick}
+                      disabled={loading}
+                      onClick={handleClick}
                       className="inline-flex items-center justify-center w-full px-4 py-4 text-base font-semibold text-white transition-all duration-200 bg-blue-600 border border-transparent rounded-md focus:outline-none hover:bg-blue-700 focus:bg-blue-700"
                     >
                       Log in
                     </button>
                     {error && <span>{error.message}</span>}
-
                   </div>
                 </div>
               </form>

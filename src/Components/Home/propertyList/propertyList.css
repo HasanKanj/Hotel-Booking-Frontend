@@ -13,6 +13,7 @@
   overflow: hidden;
   cursor: pointer;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
 }
 
 .pListImg {
@@ -21,6 +22,11 @@
   object-fit: cover;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
+  transition: transform 0.3s ease; /* Add transition for smooth zoom effect */
+}
+
+.pListImg:hover {
+  transform: scale(1.1); /* Zoom in on hover */
 }
 
 .pListTitles {
@@ -45,5 +51,9 @@
 @media screen and (max-width: 768px) {
   .pList {
     grid-template-columns: 1fr;
+  }
+  .pListItem{
+    margin-left: 20px; /* Add left spacing */
+    margin-right: 20px; /* Add right spacing */
   }
 }
