@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Signup from "../Signup/SIgnup";
 const API_URL = "http://localhost:5000/api/auth/register";
 
 export default function Register() {
@@ -11,7 +12,11 @@ export default function Register() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [phone, setPhone] = useState("");
+  const [showSignup, setShowSignup] = useState(false);
 
+  const handleGoogleSignup = () => {
+    setShowSignup(true);
+  };
   const handleUsernameChange = (ev) => {
     setUsername(ev.target.value);
   };
@@ -59,7 +64,7 @@ export default function Register() {
 
   return (
     <div>
-            <ToastContainer position="bottom-right" />
+      <ToastContainer position="bottom-right" />
 
       <section className="bg-white">
         <div className="">
@@ -205,6 +210,7 @@ export default function Register() {
                 <button
                   type="button"
                   className="relative inline-flex items-center justify-center w-full px-4 py-4 text-base font-semibold text-gray-700 transition-all duration-200 bg-white border-2 border-gray-200 rounded-md hover:bg-gray-100 focus:bg-gray-100 hover:text-black focus:text-black focus:outline-none"
+                  onClick={handleGoogleSignup}
                 >
                   <div className="absolute inset-y-0 left-0 p-4">
                     <svg
@@ -219,6 +225,7 @@ export default function Register() {
                   Sign up with Google
                 </button>
               </div>
+              {showSignup && <Signup />}
             </div>
           </div>
         </div>

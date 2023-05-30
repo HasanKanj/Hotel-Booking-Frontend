@@ -58,6 +58,7 @@
 }
 
 .headerSearchItemss {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -65,6 +66,18 @@
   margin: 5px; /* Add margin for spacing between items */
 }
 
+.calendarWrapper .rdrCalendarWrapper,
+.options {
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, 13px);
+}
+
+.options {
+  transform: translate(-50%, -25px);
+}
 .headerSearchInputss {
   border: none;
   outline: none;

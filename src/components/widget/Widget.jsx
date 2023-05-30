@@ -52,11 +52,13 @@ const Widget = ({ type }) => {
   switch (type) {
     case "user":
       data = {
-        title: "USERS",
+        title: (
+          <span style={{ color: "#3B79C9" }}>USERS</span>
+        ),
         isMoney: false,
         link: (
-          <Link to="/users" className="link">
-            See all users
+          <Link to="/users" className="link" style={{ color: "#3B79C9" }}>
+          See all users
           </Link>
         ),
         icon: (
@@ -72,10 +74,11 @@ const Widget = ({ type }) => {
       break;
     case "Hotels":
       data = {
-        title: "Hotels",
-        isMoney: false,
+        title: (
+          <span style={{ color: "#3B79C9" }}>Hotel</span>
+        ),        isMoney: false,
         link: (
-          <Link to="/hotels" className="link">
+          <Link to="/hotels" className="link" style={{ color: "#3B79C9" }}>
             View all Hotels{" "}
           </Link>
         ),
@@ -92,11 +95,12 @@ const Widget = ({ type }) => {
       break;
     case "Rooms":
       data = {
-        title: "Rooms",
-        isMoney: true,
+        title: (
+          <span style={{ color: "#3B79C9" }}>Rooms</span>
+        ),        isMoney: true,
 
         link: (
-          <Link to="/rooms" className="link">
+          <Link to="/rooms" className="link" style={{ color: "#3B79C9" }}>
             View all rooms{" "}
           </Link>
         ),
@@ -123,7 +127,7 @@ const Widget = ({ type }) => {
         <span className="link">{data.link}</span>
       </div>
       <div className="right">
-        <div className="percentage positive">
+      <div className="percentage positive" style={{ color: "#3B79C9" }}>
           <KeyboardArrowUpIcon />
           {diff} %
         </div>

@@ -11,7 +11,7 @@
   .datatableTitle{
     width: 100%;
     font-size: 24px;
-    color:rgb(60, 196, 151);
+    color:#3B79C9;
     margin-bottom: 10px;
     display: flex;
     align-items: center;
@@ -19,17 +19,17 @@
 
     .link{
       text-decoration: none;
-      color: green;
+      color: #3B79C9;
       font-size: 16px;
       font-weight: 400;
-      border: 1px solid green;
+      border: 1px solid #3B79C9;
       padding: 5px;
       border-radius: 5px;
       cursor: pointer;
     }
   }
   .editButton {
-    background-color:rgb(60, 196, 151);
+    background-color:#3B79C9;
     color: white;
     border: none;
     padding: 8px 16px;
@@ -51,7 +51,7 @@
     background-color: #1e87db;
   }
   .editButton:hover {
-    background-color: #45a049;
+    background-color: #3B79C9;
   }
 
   .cellWithImg {
@@ -73,7 +73,7 @@
 
     &.active {
       background-color: rgba(0, 128, 0, 0.05);
-      color: green;
+      color: #3B79C9;
     }
     &.pending {
       background-color: rgba(255, 217, 0, 0.05);

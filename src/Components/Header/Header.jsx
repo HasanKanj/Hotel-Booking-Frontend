@@ -109,7 +109,7 @@ export default function Header() {
           ) : (
             <div className="hidden space-x-2 md:inline-block">
               <Link
-                to="/signup"
+                to="/register"
                 className="btn btn-secondary"
               >
                 Sign up

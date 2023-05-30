@@ -105,20 +105,19 @@ const SearchHeader = ({ type }) => {
                 dates[0].endDate,
                 "MM/dd/yyyy"
               )}`}</span>
-              <div className="calendarWrapper" ref={calendarWrapperRef}>
-                {openDate && (
-                  <div className="calendarWrapper">
-                    <DateRange
-                      editableDateInputs={true}
-                      onChange={(item) => setDates([item.selection])}
-                      moveRangeOnFirstSelection={false}
-                      ranges={dates}
-                      className="dates"
-                      minDate={new Date()}
-                    />
-                  </div>
-                )}
-              </div>
+
+              {openDate && (
+                <div className="calendarWrapper" ref={calendarWrapperRef}>
+                  <DateRange
+                    editableDateInputs={true}
+                    onChange={(item) => setDates([item.selection])}
+                    moveRangeOnFirstSelection={false}
+                    ranges={dates}
+                    className="dates"
+                    minDate={new Date()}
+                  />
+                </div>
+              )}
             </div>
             <div className="headerSearchItemss">
               <FontAwesomeIcon icon={faPerson} className="headerIconss" />
