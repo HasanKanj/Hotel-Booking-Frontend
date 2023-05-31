@@ -14,9 +14,9 @@ export default function Register() {
   const [phone, setPhone] = useState("");
   const [showSignup, setShowSignup] = useState(false);
 
-  const handleGoogleSignup = () => {
-    setShowSignup(true);
-  };
+  // const handleGoogleSignup = () => {
+  //   setShowSignup(true);
+  // };
   const handleUsernameChange = (ev) => {
     setUsername(ev.target.value);
   };
@@ -205,7 +205,7 @@ export default function Register() {
                   </div>
                 </div>
               </form>
-
+{/* 
               <div className="mt-3 space-y-3">
                 <button
                   type="button"
@@ -224,7 +224,7 @@ export default function Register() {
                   </div>
                   Sign up with Google
                 </button>
-              </div>
+              </div> */}
               {showSignup && <Signup />}
             </div>
           </div>

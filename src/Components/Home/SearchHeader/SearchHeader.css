@@ -82,6 +82,7 @@
   border: none;
   outline: none;
   color: black;
+  border-right: 1px solid grey;
 }
 
 .headerSearchTextss {
@@ -188,12 +189,21 @@
 @media screen and (max-width: 768px) {
   .headerSearchss {
     bottom: -51px;
-    right: 50px;
+    right: unset;
     height: auto;
     flex-wrap: wrap;
     margin: 4px -45px;
+    background-color: white;
+    width: 80%;
+  }
+  .calendarWrapper .rdrCalendarWrapper {
+    left: 135%;
+    top: -55px;
   }
 
+  .options {
+    left: 0%;
+  }
   .rdrCalendarWrapper {
     margin: 164px -42px;
   }
@@ -221,5 +231,8 @@
 
   .optionItem {
     width: 180px; /* Adjust width of option items */
+  }
+  .headerss {
+    position: unset;
   }
 }
