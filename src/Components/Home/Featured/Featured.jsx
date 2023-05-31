@@ -6,7 +6,7 @@ import useFetch from "../../../hooks/useFetch";
 
 const Featured = () => {
   const { data, loading } = useFetch(
-    `http://localhost:5000/api/hotels/countByCity?cities=Madrid,Beirut`
+    `https://booking-backend-ei2v.onrender.com/api/hotels/countByCity?cities=Madrid,Beirut`
   );
 
   return (
@@ -37,7 +37,6 @@ const Featured = () => {
               <h2 className="properties">{data[2]} properties</h2>
             </div>
           </div>
-     
         </>
       )}
     </div>

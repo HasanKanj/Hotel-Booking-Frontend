@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import "./newContact.scss";
 import Sidebar from "../../components/sidebar/Sidebar";
 import Navbar from "../../components/navbar/Navbar";
@@ -12,7 +12,9 @@ const NewContact = () => {
   const [hotelId, setHotelId] = useState(undefined);
   const [rooms, setRooms] = useState([]);
 
-  const { data, loading, error, } = useFetch("http://localhost:5000/api/contact/getAll");
+  const { data, loading, error } = useFetch(
+    "https://booking-backend-ei2v.onrender.com/api/contact/getAll"
+  );
 
   const handleChange = (e) => {
     setInfo((prev) => ({ ...prev, [e.target.id]: e.target.value }));
@@ -22,7 +24,10 @@ const NewContact = () => {
     e.preventDefault();
     const roomNumbers = rooms.split(",").map((room) => ({ number: room }));
     try {
-      await axios.post(`http://localhost:5000/api/rooms/${hotelId}`, { ...info, roomNumbers });
+      await axios.post(
+        `https://booking-backend-ei2v.onrender.com/api/rooms/${hotelId}`,
+        { ...info, roomNumbers }
+      );
     } catch (err) {
       console.log(err);
     }
@@ -34,7 +39,9 @@ const NewContact = () => {
       <div className="newContainer">
         <Navbar />
         <div className="top">
-          <Link to="/contact" className="goBackButton">Go Back</Link>
+          <Link to="/contact" className="goBackButton">
+            Go Back
+          </Link>
         </div>
         {/* Rest of the component */}
       </div>

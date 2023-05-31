@@ -12,7 +12,9 @@ const NewHotel = () => {
   const [info, setInfo] = useState({});
   const [rooms, setRooms] = useState([]);
 
-  const { data, loading, error, } = useFetch(`http://localhost:5000/api/rooms`);
+  const { data, loading, error } = useFetch(
+    `https://booking-backend-ei2v.onrender.com/api/rooms`
+  );
 
   const handleChange = (e) => {
     setInfo((prev) => ({ ...prev, [e.target.id]: e.target.value }));
@@ -25,8 +27,8 @@ const NewHotel = () => {
     );
     setRooms(value);
   };
-  
-  console.log(files)
+
+  console.log(files);
 
   const handleClick = async (e) => {
     e.preventDefault();
@@ -52,8 +54,13 @@ const NewHotel = () => {
         photos: list,
       };
 
-      await axios.post("http://localhost:5000/api/hotels/", newhotel);
-    } catch (err) {console.log(err)}
+      await axios.post(
+        "https://booking-backend-ei2v.onrender.com/api/hotels/",
+        newhotel
+      );
+    } catch (err) {
+      console.log(err);
+    }
   };
   return (
     <div className="new">

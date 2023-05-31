@@ -8,19 +8,21 @@ import useFetch from "../../hooks/useFetch";
 
 const List = () => {
   const location = useLocation();
-  const [destination, setDestination] = useState(location.state?.destination ?? "");
-  const [dates, setDates] = useState(location.state?.dates ?? [{ startDate: new Date(), endDate: new Date() }]);
+  const [destination, setDestination] = useState(
+    location.state?.destination ?? ""
+  );
+  const [dates, setDates] = useState(
+    location.state?.dates ?? [{ startDate: new Date(), endDate: new Date() }]
+  );
   const [openDate, setOpenDate] = useState(false);
   const [options, setOptions] = useState(location.state?.options ?? {});
   const [min, setMin] = useState(undefined);
   const [max, setMax] = useState(undefined);
-  
 
-  
   const { data, loading, reFetch } = useFetch(
-    `http://localhost:5000/api/hotels?city=${destination}&min=${min || 0}&max=${
-      max || 999
-    }`
+    `https://booking-backend-ei2v.onrender.com/api/hotels?city=${destination}&min=${
+      min || 0
+    }&max=${max || 999}`
   );
 
   const handleClick = () => {

@@ -1,10 +1,10 @@
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 import "./featuredProperties.css";
 import useFetch from "../../../hooks/useFetch";
 
 const FeaturedProperties = () => {
   const { data, loading } = useFetch(
-    `http://localhost:5000/api/hotels?featured=true&limit=3`
+    `https://booking-backend-ei2v.onrender.com/api/hotels?featured=true&limit=3`
   );
 
   return (
@@ -31,4 +31,4 @@ const FeaturedProperties = () => {
   );
 };
 
-export default FeaturedProperties
+export default FeaturedProperties;

@@ -73,9 +73,10 @@ export default function Header() {
                 Home
               </NavLink>
             </li>
+            
             <li className="text-black">
               <NavLink to="/hotels" activeclassname="active">
-                Hotels
+                Properties
               </NavLink>
             </li>
             <li className="text-black">

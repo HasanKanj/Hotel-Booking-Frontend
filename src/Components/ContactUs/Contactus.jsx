@@ -51,7 +51,10 @@ export default function Contactus() {
       await sendEmail(e);
 
       // Submit the form data to your API or perform any desired actions
-      await axios.post("http://localhost:5000/api/contact/create", formData);
+      await axios.post(
+        "https://booking-backend-ei2v.onrender.com/api/contact/create",
+        formData
+      );
 
       setFormData({
         name: "",

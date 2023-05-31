@@ -7,7 +7,7 @@ export default function Cards() {
   const fetchData = async () => {
     try {
       const response = await fetch(
-        "http://localhost:5000/api/hotels?featured=true&limit=4"
+        "https://booking-backend-ei2v.onrender.com/api/hotels?featured=true&limit=4"
       );
       const jsonData = await response.json();
       setData(jsonData);
@@ -42,22 +42,19 @@ export default function Cards() {
                             className="text-dark hover:text-primary mb-4 block text-xl font-semibold sm:text-[22px] md:text-xl lg:text-[22px] xl:text-xl 2xl:text-[22px]"
                           >
                             {item.name}
-                            
                           </a>
                         </h3>
                         <p className="text-body-color mb-7 text-base leading-relaxed">
-                          {item.city} <span >
-                Starting from ${item.cheapestPrice}
-              </span>
+                          {item.city}{" "}
+                          <span>Starting from ${item.cheapestPrice}</span>
                           {item.rating && (
                             <>
                               <button>{item.rating}</button>
                               <span>Excellent</span>
                             </>
                           )}
-                          
                         </p>
-                        
+
                         <a
                           href="javascript:void(0)"
                           className="text-body-color hover:border-primary hover:bg-primary inline-block rounded-full border border-[#E5E7EB] py-2 px-7 text-base font-medium transition hover:text-white"

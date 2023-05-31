@@ -1,12 +1,12 @@
 import "./logins.css";
-import  { useEffect } from "react";
+import { useEffect } from "react";
 import { useState } from "react";
-import {  useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
 import { useContext } from "react";
-import bb from '../../assets/bb.jpg'
-import cc from '../../assets/personalization.png'
-import dd from '../../assets/pp.png'
+import bb from "../../assets/bb.jpg";
+import cc from "../../assets/personalization.png";
+import dd from "../../assets/pp.png";
 
 import axios from "axios";
 
@@ -29,19 +29,22 @@ const LoginForm = () => {
     dispatch({ type: "LOGIN_START" });
     try {
       const res = await axios.post(
-        "http://localhost:5000/api/auth/login",
+        "https://booking-backend-ei2v.onrender.com/api/auth/login",
         credentials
       );
       if (res.data.details.isAdmin) {
         dispatch({ type: "LOGIN_SUCCESS", payload: res.data.details });
         navigate("/");
       } else {
-        dispatch({ type: "LOGIN_FAILURE", payload: { message: "You are not allowed" } });
+        dispatch({
+          type: "LOGIN_FAILURE",
+          payload: { message: "You are not allowed" },
+        });
       }
     } catch (err) {
       dispatch({ type: "LOGIN_FAILURE", payload: err.response.data });
     }
-  }
+  };
   useEffect(() => {
     const inputs = document.querySelectorAll(".input");
 
@@ -72,13 +75,10 @@ const LoginForm = () => {
 
   return (
     <div>
-      <img
-        className="wave"
-        src={bb}
-      />
+      <img className="wave" src={bb} />
       <div className="container">
         <div className="img">
-          <img src={cc}/>
+          <img src={cc} />
         </div>
         <div className="login-content">
           <form onSubmit className="mt-8">
@@ -123,5 +123,5 @@ const LoginForm = () => {
       </div>
     </div>
   );
-  }
+};
 export default LoginForm;

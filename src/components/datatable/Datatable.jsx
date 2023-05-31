@@ -11,11 +11,10 @@ const Datatable = ({ columns }) => {
   const location = useLocation();
   const path = location.pathname.split("/")[1];
   const [list, setList] = useState([]);
-  const { data,  reFetch } = useFetch(
-    `http://localhost:5000/api/${path}`
+  const { data, reFetch } = useFetch(
+    `https://booking-backend-ei2v.onrender.com/api/${path}`
   );
   const [editRowId, setEditRowId] = useState(null);
-
 
   const handleDelete = async (id) => {
     try {
@@ -29,7 +28,9 @@ const Datatable = ({ columns }) => {
         confirmButtonText: "Yes, delete it!",
       });
       if (result.isConfirmed) {
-        await axios.delete(`http://localhost:5000/api/${path}/${id}`);
+        await axios.delete(
+          `https://booking-backend-ei2v.onrender.com/api/${path}/${id}`
+        );
         setList(list.filter((item) => item._id !== id));
         await Swal.fire("Deleted!", "Your file has been deleted.", "success");
         window.location.reload();
@@ -49,7 +50,10 @@ const Datatable = ({ columns }) => {
   const handleSaveEdit = async (id, updatedData) => {
     try {
       // Perform the edit/update operation using the appropriate API
-      await axios.put(`http://localhost:5000/api/${path}/${id}`, updatedData);
+      await axios.put(
+        `https://booking-backend-ei2v.onrender.com/api/${path}/${id}`,
+        updatedData
+      );
       // Refresh the data after successful edit
       reFetch();
       // Set the editRowId to null to exit the edit mode
@@ -66,11 +70,14 @@ const Datatable = ({ columns }) => {
   const handleCellEditCommit = async ({ id, field, value }) => {
     // Update the specific field of the row in the backend
     try {
-      // Example endpoint: `http://localhost:5000/api/${path}/${id}`
+      // Example endpoint: `https://booking-backend-ei2v.onrender.com/api/${path}/${id}`
       // Perform the update operation using the appropriate API
-      await axios.put(`http://localhost:5000/api/${path}/${id}`, {
-        [field]: value,
-      });
+      await axios.put(
+        `https://booking-backend-ei2v.onrender.com/api/${path}/${id}`,
+        {
+          [field]: value,
+        }
+      );
     } catch (err) {
       // Handle error
     }
@@ -90,15 +97,15 @@ const Datatable = ({ columns }) => {
             >
               Save
             </button>
-            <button
-              className="cancelButton"
-              onClick={() => handleCancelEdit()}
-            >
+            <button className="cancelButton" onClick={() => handleCancelEdit()}>
               Cancel
             </button>
           </>
         ) : (
-          <button className="editButton" onClick={() => handleEdit(params.row._id)}>
+          <button
+            className="editButton"
+            onClick={() => handleEdit(params.row._id)}
+          >
             Edit
           </button>
         )}
@@ -134,13 +141,15 @@ const Datatable = ({ columns }) => {
         pageSize={9}
         rowsPerPageOptions={[9]}
         checkboxSelection
-        disableSelectionOnClick  // Add this prop
+        disableSelectionOnClick // Add this prop
         getRowId={(row) => row._id}
         components={{
           Toolbar: GridToolbar,
         }}
         onEditCellChangeCommitted={handleCellEditCommit}
-        isCellEditable={(params) => params.field !== "action" && editRowId !== null}
+        isCellEditable={(params) =>
+          params.field !== "action" && editRowId !== null
+        }
       />
     </div>
   );

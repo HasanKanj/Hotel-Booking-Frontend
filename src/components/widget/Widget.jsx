@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 import "./widget.scss";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
@@ -21,13 +21,13 @@ const Widget = ({ type }) => {
       let url = "";
       switch (type) {
         case "user":
-          url = "http://localhost:5000/api/users/count";
+          url = "https://booking-backend-ei2v.onrender.com/api/users/count";
           break;
         case "Hotels":
-          url = "http://localhost:5000/api/hotels/count";
+          url = "https://booking-backend-ei2v.onrender.com/api/hotels/count";
           break;
         case "Rooms":
-          url = "http://localhost:5000/api/rooms/count";
+          url = "https://booking-backend-ei2v.onrender.com/api/rooms/count";
           break;
         default:
           break;
@@ -52,13 +52,11 @@ const Widget = ({ type }) => {
   switch (type) {
     case "user":
       data = {
-        title: (
-          <span style={{ color: "#3B79C9" }}>USERS</span>
-        ),
+        title: <span style={{ color: "#3B79C9" }}>USERS</span>,
         isMoney: false,
         link: (
           <Link to="/users" className="link" style={{ color: "#3B79C9" }}>
-          See all users
+            See all users
           </Link>
         ),
         icon: (
@@ -74,9 +72,8 @@ const Widget = ({ type }) => {
       break;
     case "Hotels":
       data = {
-        title: (
-          <span style={{ color: "#3B79C9" }}>Hotel</span>
-        ),        isMoney: false,
+        title: <span style={{ color: "#3B79C9" }}>Hotel</span>,
+        isMoney: false,
         link: (
           <Link to="/hotels" className="link" style={{ color: "#3B79C9" }}>
             View all Hotels{" "}
@@ -95,9 +92,8 @@ const Widget = ({ type }) => {
       break;
     case "Rooms":
       data = {
-        title: (
-          <span style={{ color: "#3B79C9" }}>Rooms</span>
-        ),        isMoney: true,
+        title: <span style={{ color: "#3B79C9" }}>Rooms</span>,
+        isMoney: true,
 
         link: (
           <Link to="/rooms" className="link" style={{ color: "#3B79C9" }}>
@@ -127,7 +123,7 @@ const Widget = ({ type }) => {
         <span className="link">{data.link}</span>
       </div>
       <div className="right">
-      <div className="percentage positive" style={{ color: "#3B79C9" }}>
+        <div className="percentage positive" style={{ color: "#3B79C9" }}>
           <KeyboardArrowUpIcon />
           {diff} %
         </div>

@@ -1,10 +1,10 @@
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 import "./propertyList.css";
 import useFetch from "../../../hooks/useFetch";
 
 const PropertyList = () => {
   const { data, loading } = useFetch(
-    `http://localhost:5000/api/hotels/countByType`
+    `https://booking-backend-ei2v.onrender.com/api/hotels/countByType`
   );
 
   const images = [

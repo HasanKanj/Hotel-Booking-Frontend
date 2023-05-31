@@ -6,107 +6,116 @@ import useFetch from "../../../hooks/useFetch";
 
 export default function Newcards() {
   const { data, loading } = useFetch(
-    `http://localhost:5000/api/hotels/countByCity?cities=Madrid,Beirut`
+    `https://booking-backend-ei2v.onrender.com/api/hotels/countByCity?cities=Madrid,Beirut`
   );
 
   return (
-    <div> {loading ? (
-      "Loading please wait"
-    ) : (
-      <>
-      <section className="popular" id="destination">
-        <div className="containersss">
+    <div>
+      {" "}
+      {loading ? (
+        "Loading please wait"
+      ) : (
+        <>
+          <section className="popular" id="destination">
+            <div className="containersss">
+              <h2 className="h2 section-title">Popular destination</h2>
 
-          <h2 className="h2 section-title">Popular destination</h2>
+              <ul className="popular-list">
+                <li>
+                  <div className="popular-card">
+                    <figure className="card-img">
+                      <img src={img1} alt="San miguel, italy" loading="lazy" />
+                    </figure>
 
-          <ul className="popular-list">
-            <li>
-              <div className="popular-card">
-                <figure className="card-img">
-                  <img src={img1} alt="San miguel, italy" loading="lazy" />
-                </figure>
+                    <div className="card-content">
+                      <div className="card-rating">
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                      </div>
 
-                <div className="card-content">
-                  <div className="card-rating">
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
+                      <p className="card-subtitle">
+                        <a href="#">Beirut</a>
+                      </p>
+
+                      <h3 className="h3 card-title">
+                        <a href="#">Sahat al shohada</a>
+                      </h3>
+
+                      <p className="card-text">{data[0]} Properties </p>
+                    </div>
                   </div>
+                </li>
 
-                  <p className="card-subtitle">
-                    <a href="#">Beirut</a>
-                  </p>
+                <li>
+                  <div className="popular-card">
+                    <figure className="card-img">
+                      <img
+                        src={img2}
+                        alt="Burj khalifa, Faraya"
+                        loading="lazy"
+                      />
+                    </figure>
 
-                  <h3 className="h3 card-title">
-                    <a href="#">Sahat al shohada</a>
-                  </h3>
+                    <div className="card-content">
+                      <div className="card-rating">
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                      </div>
 
-                  <p className="card-text">{data[0]} Properties </p>
-                </div>
-              </div>
-            </li>
+                      <p className="card-subtitle">
+                        <a href="#">Faraya</a>
+                      </p>
 
-            <li>
-              <div className="popular-card">
-                <figure className="card-img">
-                  <img src={img2} alt="Burj khalifa, Faraya" loading="lazy" />
-                </figure>
+                      <h3 className="h3 card-title">
+                        <a href="#">Burj khalifa</a>
+                      </h3>
 
-                <div className="card-content">
-                  <div className="card-rating">
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
+                      <p className="card-text"> {data[1]} Properties</p>
+                    </div>
                   </div>
+                </li>
 
-                  <p className="card-subtitle">
-                    <a href="#">Faraya</a>
-                  </p>
+                <li>
+                  <div className="popular-card">
+                    <figure className="card-img">
+                      <img
+                        src={img3}
+                        alt="Kyoto temple, japan"
+                        loading="lazy"
+                      />
+                    </figure>
 
-                  <h3 className="h3 card-title">
-                    <a href="#">Burj khalifa</a>
-                  </h3>
+                    <div className="card-content">
+                      <div className="card-rating">
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                      </div>
 
-                  <p className="card-text"> {data[1]} Properties</p>
-                </div>
-              </div>
-            </li>
+                      <p className="card-subtitle">
+                        <a href="#">Tyre</a>
+                      </p>
 
-            <li>
-              <div className="popular-card">
-                <figure className="card-img">
-                  <img src={img3} alt="Kyoto temple, japan" loading="lazy" />
-                </figure>
+                      <h3 className="h3 card-title">
+                        <a href="#">Kyoto temple</a>
+                      </h3>
 
-                <div className="card-content">
-                  <div className="card-rating">
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
+                      <p className="card-text"> {data[2]} Properties</p>
+                    </div>
                   </div>
-
-                  <p className="card-subtitle">
-                    <a href="#">Tyre</a>
-                  </p>
-
-                  <h3 className="h3 card-title">
-                    <a href="#">Kyoto temple</a>
-                  </h3>
-
-                  <p className="card-text"> {data[2]} Properties</p>
-                </div>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </section>
-      </>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </>
       )}
     </div>
   );

@@ -33,7 +33,10 @@ const New = ({ inputs, title }) => {
         img: url,
       };
 
-      await axios.post("http://localhost:5000/api/auth/register", newUser);
+      await axios.post(
+        "https://booking-backend-ei2v.onrender.com/api/auth/register",
+        newUser
+      );
       console.log(data);
     } catch (err) {
       console.log(err);

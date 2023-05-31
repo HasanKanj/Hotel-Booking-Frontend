@@ -11,7 +11,9 @@ const NewRoom = () => {
   const [hotelId, setHotelId] = useState(undefined);
   const [rooms, setRooms] = useState([]);
 
-  const { data, loading, error, } = useFetch(`http://localhost:5000/api/hotels`);
+  const { data, loading, error } = useFetch(
+    `https://booking-backend-ei2v.onrender.com/api/hotels`
+  );
 
   const handleChange = (e) => {
     setInfo((prev) => ({ ...prev, [e.target.id]: e.target.value }));
@@ -21,13 +23,16 @@ const NewRoom = () => {
     e.preventDefault();
     const roomNumbers = rooms.split(",").map((room) => ({ number: room }));
     try {
-      await axios.post(`http://localhost:5000/api/rooms//${hotelId}`, { ...info, roomNumbers });
+      await axios.post(
+        `https://booking-backend-ei2v.onrender.com/api/rooms//${hotelId}`,
+        { ...info, roomNumbers }
+      );
     } catch (err) {
       console.log(err);
     }
   };
 
-  console.log(info)
+  console.log(info);
   return (
     <div className="new">
       <Sidebar />
@@ -67,7 +72,9 @@ const NewRoom = () => {
                     ? "loading"
                     : data &&
                       data.map((hotel) => (
-                        <option key={hotel._id} value={hotel._id}>{hotel.name}</option>
+                        <option key={hotel._id} value={hotel._id}>
+                          {hotel.name}
+                        </option>
                       ))}
                 </select>
               </div>

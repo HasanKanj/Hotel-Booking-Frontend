@@ -5,7 +5,7 @@ import { ToastContainer } from "react-toastify";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Signup from "../Signup/SIgnup";
-const API_URL = "http://localhost:5000/api/auth/register";
+const API_URL = "https://booking-backend-ei2v.onrender.com/api/auth/register";
 
 export default function Register() {
   const [username, setUsername] = useState("");
@@ -205,7 +205,7 @@ export default function Register() {
                   </div>
                 </div>
               </form>
-{/* 
+              {/* 
               <div className="mt-3 space-y-3">
                 <button
                   type="button"

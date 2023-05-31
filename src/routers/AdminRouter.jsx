@@ -7,7 +7,6 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import { userInputs } from "./../formSource";
 import "../style/dark.scss";
 import { useContext } from "react";
-import { DarkModeContext } from "../context/darkModeContext";
 import { AuthContext } from "../context/AuthContext";
 import {
   userColumns,
@@ -21,7 +20,6 @@ import NewContact from "../pages/newRoom/NewRoom";
 
 import PropTypes from "prop-types";
 function AdminRouter() {
-  const { darkMode } = useContext(DarkModeContext);
 
   const ProtectedRoute = ({ children }) => {
     const { user } = useContext(AuthContext);

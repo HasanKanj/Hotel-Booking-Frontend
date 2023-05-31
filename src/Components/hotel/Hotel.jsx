@@ -34,12 +34,13 @@ const Hotel = () => {
   }
   console.log(dates, "dates");
 
-  const days = dates && dates[0] ? dayDifference(dates[0].endDate, dates[0].startDate) : 0;
+  const days =
+    dates && dates[0] ? dayDifference(dates[0].endDate, dates[0].startDate) : 0;
 
   const fetchData = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:5000/api/hotels/find/${id}`
+        `https://booking-backend-ei2v.onrender.com/api/hotels/find/${id}`
       );
       setData(response.data);
       console.log(response.data);
@@ -145,7 +146,7 @@ const Hotel = () => {
                 <img src={data.url} />
               </div>
               <div className="hotelDetailsPrice">
-                <h1>Perfect for a {dates ? `${days}-night stay!` : ''}</h1>
+                <h1>Perfect for a {dates ? `${days}-night stay!` : ""}</h1>
                 <span>
                   Located in the real heart of Krakow, this property has an
                   excellent location score of 9.8!
