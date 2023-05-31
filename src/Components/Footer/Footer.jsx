@@ -34,14 +34,6 @@ export default function Footers() {
                 </a>
               </li>
   
-              <li>
-                <a
-                  className="text-gray-700 transition hover:text-gray-700/75"
-                  href="/"
-                >
-                  Careers
-                </a>
-              </li>
             </ul>
           </nav>
         </div>
@@ -69,14 +61,7 @@ export default function Footers() {
                 </a>
               </li>
   
-              <li>
-                <a
-                  className="text-gray-700 transition hover:text-gray-700/75"
-                  href="/"
-                >
-                  Marketing
-                </a>
-              </li>
+            
   
             
             </ul>
@@ -110,14 +95,6 @@ export default function Footers() {
                 </a>
               </li>
   
-              <li>
-                <a
-                  className="text-gray-700 transition hover:text-gray-700/75"
-                  href="/"
-                >
-                  Upcoming Events
-                </a>
-              </li>
             </ul>
           </nav>
         </div>
@@ -171,7 +148,7 @@ export default function Footers() {
                 />
   
                 <button
-                  className="block rounded-full bg-indigo-500 px-8 py-3 font-medium text-white transition hover:bg-indigo-600"
+                  className="block rounded-full bg-blue-400 px-8 py-3 font-medium text-white transition hover:bg-blue-600"
                   type="submit"
                 >
                   Subscribe

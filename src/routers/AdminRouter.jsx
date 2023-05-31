@@ -31,7 +31,7 @@ function AdminRouter() {
   };
 
   return (
-    <div className={darkMode ? "app dark" : "app"}>
+    <div >
       <Routes>
         <Route path="/">
           <Route path="login" element={<Logins />} />
