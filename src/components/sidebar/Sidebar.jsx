@@ -19,7 +19,7 @@ const Sidebar = () => {
     // Perform logout actions if needed
 
     // Redirect to the login page or perform other navigation logic
-    window.location.href = "/login";
+    window.location.href = "/";
   };
 
   return (

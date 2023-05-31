@@ -6,7 +6,6 @@
   padding: var(--padding, 8px 18px);
   border: var(--border-width, 2px) solid;
   transition: var(--transition);
-  background-color: none !important;
   color: var(--bright-navy-blue);
 }
 
@@ -19,11 +18,9 @@
   color: white;
   background: var(--yale-blue);
   border-color: var(--yale-blue);
-  background-color: none !important;
 }
 
 .baton {
   display: flex;
   justify-content: center;
-  background-color: none !important;
 }

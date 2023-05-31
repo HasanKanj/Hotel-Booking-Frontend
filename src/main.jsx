@@ -1,27 +1,23 @@
 import React from "react";
-import ReactDOM from "react-dom";
-import App from "./App";
+import ReactDOM from "react-dom/client";
+import App from "./App.jsx";
 import "./index.css";
 import { BrowserRouter } from "react-router-dom";
-import { DarkModeContextProvider } from "../../client/src/context/darkModeContext";
-import { SearchContextProvider } from ".././src/context/SearchContext";
-import { AuthContextProvider } from ".././src/context/AuthContext";
-import { Provider } from "react-redux";
-import { Store } from "./Store";
+import { DarkModeContextProvider } from "../../client/src/context/darkModeContext.jsx";
+import { SearchContextProvider } from ".././src/context/SearchContext.jsx";
+import { AuthContextProvider } from ".././src/context/AuthContext.jsx";
 
-ReactDOM.render(
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(
   <React.StrictMode>
     <AuthContextProvider>
       <DarkModeContextProvider>
         <SearchContextProvider>
           <BrowserRouter>
-            <Provider store={Store}>
-              <App />
-            </Provider>
+            <App />
           </BrowserRouter>
         </SearchContextProvider>
       </DarkModeContextProvider>
     </AuthContextProvider>
-  </React.StrictMode>,
-  document.getElementById("root")
+  </React.StrictMode>
 );

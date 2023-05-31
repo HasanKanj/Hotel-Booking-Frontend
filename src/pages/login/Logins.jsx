@@ -32,7 +32,7 @@ const LoginForm = () => {
         "http://localhost:5000/api/auth/login",
         credentials
       );
-      if (res.data.isAdmin) {
+      if (res.data.details.isAdmin) {
         dispatch({ type: "LOGIN_SUCCESS", payload: res.data.details });
         navigate("/");
       } else {

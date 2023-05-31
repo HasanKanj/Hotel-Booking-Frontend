@@ -42,7 +42,7 @@ function AdminRouter() {
             index
             element={
               <ProtectedRoute>
-                <Home />{" "}
+                <Home />
               </ProtectedRoute>
             }
           />

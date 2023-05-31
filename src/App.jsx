@@ -1,9 +1,20 @@
-// import AdminLayout from "../src/Layout/AdminLayout.jsx";
-import Layout from "../src/Layout/Layout";
+import AdminLayout from "../src/Layout/AdminLayout";
+import Layout from "./Layout/Layout";
+
 export default function App() {
+  // Retrieve user details from local storage
+  const user = JSON.parse(localStorage.getItem("user"));
+
+  // Check if the user's email is "kanjo@gmail.com"
+  const isKanjoUser = user && user.details && user.details.email === "kanjo@gmail.com";
+
   return (
     <div>
-      <Layout/>
+      {isKanjoUser ? (
+        <AdminLayout />
+      ) : (
+        <Layout />
+      )}
     </div>
-  )
+  );
 }
