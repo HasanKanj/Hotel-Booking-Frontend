@@ -159,6 +159,39 @@ const Hotel = () => {
               </div>
             </div>
           </div>
+          <section className="py-10 bg-white sm:py-16 lg:py-24">
+            <div className="max-w-6xl px-4 mx-auto sm:px-6 lg:px-8">
+              <h2 className="text-2xl font-bold leading-tight text-black sm:text-3xl lg:text-4xl">
+                Frequently Asked Questions: Travellers Destination
+              </h2>
+
+              <div className="flow-root mt-12 sm:mt-16">
+                <div className="divide-y divide-gray--200 -my-9">
+                  <div className="py-9">
+                    <p className="text-xl font-semibold text-black">
+                      How much does it cost to stay at Travellers Destination?
+                    </p>
+                    <p className="mt-3 text-base text-gray-600">
+                      The cost of living in Travellers Destination depends on
+                      the date, rate, number of guests etc. Enter your dates to
+                      see prices.
+                    </p>
+                  </div>
+
+                  <div className="py-9">
+                    <p className="text-xl font-semibold text-black">
+                      What are the check-in and check-out times at Travellers
+                      Destination?
+                    </p>
+                    <p className="mt-3 text-base text-gray-600">
+                      Check-in at Travellers Destination is possible from 13:00,
+                      check-out is until 12:00.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
         </div>
       )}
       {openModal && <Reserve setOpen={setOpenModal} hotelId={id} />}

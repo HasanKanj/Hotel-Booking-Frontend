@@ -47,7 +47,7 @@ export default function Register() {
       });
 
       if (response.status === 200) {
-        toast.error("Registration Successful..");
+        toast.success("Registration Successful");
         setUsername("");
         setEmail("");
         setPassword("");

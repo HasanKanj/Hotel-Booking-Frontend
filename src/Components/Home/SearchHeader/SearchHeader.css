@@ -188,11 +188,10 @@
 }
 @media screen and (max-width: 768px) {
   .headerSearchss {
-    bottom: -125px;
     right: unset;
     height: auto;
     flex-wrap: wrap;
-    margin: 4px -45px;
+    margin: -208px -45px;
     background-color: white;
     width: 80%;
   }

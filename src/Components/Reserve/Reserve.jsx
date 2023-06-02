@@ -5,6 +5,9 @@ import { useContext, useState, useEffect } from "react";
 import { SearchContext } from "../../context/SearchContext";
 import { AuthContext } from "../../context/AuthContext";
 import axios from "axios";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 import PropTypes from "prop-types";
 import emailjs from "emailjs-com";
 
@@ -129,6 +132,8 @@ const Reserve = ({ setOpen, hotelId }) => {
         });
 
       setOpen((prev) => !prev);
+      toast.success('Reservation successful!');
+
     } catch (err) {
       console.error(err);
     }
@@ -173,6 +178,8 @@ const Reserve = ({ setOpen, hotelId }) => {
           Reserve Now!
         </button>
       </div>
+      <ToastContainer />
+
     </div>
   );
 };

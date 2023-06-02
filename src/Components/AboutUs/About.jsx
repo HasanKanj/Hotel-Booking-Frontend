@@ -58,10 +58,10 @@ export default function About() {
           <section className="grid grid-cols-1 gap-8 mt-8 xl:mt-12 lg:grid-cols-2 xl:grid-cols-3">
             <div className="p-8 border rounded-lg dark:border-gray-700">
               <p className="leading-loose text-gray-500 dark:text-gray-400">
-                “Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Tempore quibusdam ducimus libero ad tempora doloribus expedita
-                laborum saepe voluptas perferendis delectus assumenda rerum,
-                culpa aperiam dolorum, obcaecati corrupti aspernatur a.”.
+                I had planned for 1 night but extended to 2, that is how much we
+                loved this place. The home cooked food was finger licking good.
+                The bonfire nights and great conversations with Bhasker and his
+                father...
               </p>
               <div className="flex items-center mt-8 -mx-2">
                 <img
@@ -73,18 +73,15 @@ export default function About() {
                   <h1 className="font-semibold text-gray-800 dark:text-white">
                     Omar
                   </h1>
-                  <span className="text-sm text-gray-500 dark:text-gray-400">
-                    CTO, Omar Consultancy
-                  </span>
                 </div>
               </div>
             </div>
             <div className="p-8 bg-blue-500 border border-transparent rounded-lg dark:bg-blue-600">
               <p className="leading-loose text-white">
-                “Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Tempore quibusdam ducimus libero ad tempora doloribus expedita
-                laborum saepe voluptas perferendis delectus assumenda rerum,
-                culpa aperiam dolorum, obcaecati corrupti aspernatur a.”.
+                Basker and his family were outstanding hosts! The cottages are
+                pretty new, in two years in India we have not seen that clean
+                and comfortable homestays. The home cooked food was also among
+                the best .
               </p>
               <div className="flex items-center mt-8 -mx-2">
                 <img
@@ -94,9 +91,7 @@ export default function About() {
                 />
                 <div className="mx-2">
                   <h1 className="font-semibold text-white">lynn</h1>
-                  <span className="text-sm text-blue-200">
-                    CEO, lynn Consultancy
-                  </span>
+                
                 </div>
               </div>
             </div>
