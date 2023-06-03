@@ -6,7 +6,7 @@ import useFetch from "../../../hooks/useFetch";
 
 export default function Newcards() {
   const { data, loading } = useFetch(
-    `https://booking-backend-ei2v.onrender.com/api/hotels/countByCity?cities=Madrid,Beirut`
+    `https://booking-backend-ei2v.onrender.com/api/hotels/countByCity?cities=Beirut,jbeil,tyre`
   );
 
   return (
@@ -41,7 +41,6 @@ export default function Newcards() {
                       </p>
 
                       <h3 className="h3 card-title">
-                        <a href="#">Sahat al shohada</a>
                       </h3>
 
                       <p className="card-text">{data[0]} Properties </p>
@@ -69,11 +68,10 @@ export default function Newcards() {
                       </div>
 
                       <p className="card-subtitle">
-                        <a href="#">Faraya</a>
+                        <a href="#">JBEIL</a>
                       </p>
 
                       <h3 className="h3 card-title">
-                        <a href="#">Burj khalifa</a>
                       </h3>
 
                       <p className="card-text"> {data[1]} Properties</p>
@@ -105,7 +103,6 @@ export default function Newcards() {
                       </p>
 
                       <h3 className="h3 card-title">
-                        <a href="#">Kyoto temple</a>
                       </h3>
 
                       <p className="card-text"> {data[2]} Properties</p>
