@@ -1,7 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import Register from "../Components/Register/Register";
 import Loginn from "../Components/Login/Loginn";
-// import Loader from "../Components/Loader/"
+// import Loader from "../Components/Loader/Loader"
 import About from "../Components/AboutUs/About";
 // import Login from "../pages/login/Login";
 import ScrollToTop from "../Components/Home/ScrolltoTop/Scroll";

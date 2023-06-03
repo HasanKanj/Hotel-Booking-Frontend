@@ -99,14 +99,7 @@ export default function Loginn() {
                         Password{" "}
                       </label>
 
-                      <a
-                        href="#"
-                        title=""
-                        className="text-sm font-medium text-blue-600 hover:underline hover:text-blue-700 focus:text-blue-700"
-                      >
-                        {" "}
-                        Forgot password?{" "}
-                      </a>
+                     
                     </div>
                     <div className="mt-2.5">
                       <input
