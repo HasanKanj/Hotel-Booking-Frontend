@@ -1,7 +1,7 @@
 export default function Test() {
   return (
     <div>
-<section className="py-10 mt-12 bg-blue-100 sm:py-16 lg:py-24">
+<section className="py-10 mt-12 bg-blue-200 sm:py-16 lg:py-24">
     <div className="max-w-5xl px-4 mx-auto sm:px-6 lg:px-8">
         <div className="text-center">
             <h2 className="text-3xl font-semibold text-gray-900">

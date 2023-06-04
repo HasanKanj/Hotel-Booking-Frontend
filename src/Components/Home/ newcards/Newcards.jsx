@@ -18,8 +18,6 @@ export default function Newcards() {
         <>
           <section className="popular" id="destination">
             <div className="containersss">
-              <h2 className="h2 section-title">Popular destination</h2>
-
               <ul className="popular-list">
                 <li>
                   <div className="popular-card">
@@ -40,8 +38,7 @@ export default function Newcards() {
                         <a href="#">Beirut</a>
                       </p>
 
-                      <h3 className="h3 card-title">
-                      </h3>
+                      <h3 className="h3 card-title"></h3>
 
                       <p className="card-text">{data[0]} Properties </p>
                     </div>
@@ -71,8 +68,7 @@ export default function Newcards() {
                         <a href="#">JBEIL</a>
                       </p>
 
-                      <h3 className="h3 card-title">
-                      </h3>
+                      <h3 className="h3 card-title"></h3>
 
                       <p className="card-text"> {data[1]} Properties</p>
                     </div>
@@ -102,8 +98,7 @@ export default function Newcards() {
                         <a href="#">Tyre</a>
                       </p>
 
-                      <h3 className="h3 card-title">
-                      </h3>
+                      <h3 className="h3 card-title"></h3>
 
                       <p className="card-text"> {data[2]} Properties</p>
                     </div>
