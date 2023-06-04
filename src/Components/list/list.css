@@ -5,7 +5,7 @@
 }
 
 .labels {
-  color: white;
+  color: rgb(0, 0, 0);
   font-weight: bold;
 }
 
@@ -27,9 +27,9 @@
 }
 
 .lsTitle {
-  font-size: 20px;
-  color: #555;
-  margin-bottom: 10px;
+  font-size: 25px;
+  color: #ffffff;
+  font-weight: 700;  margin-bottom: 10px;
 }
 
 .lsItem {
@@ -41,6 +41,10 @@
 
 .lsItem > label {
   font-size: 12px;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: bold;
+  
 }
 
 .lsItem > input {
@@ -58,7 +62,7 @@
   cursor: pointer;
 }
 
-.lsOptions {
+.lsOptions  {
   padding: 10px;
 }
 
@@ -66,12 +70,14 @@
   display: flex;
   justify-content: space-between;
   margin-bottom: 10px;
-  color: #fffafa;
+  color: #ffffff;
   font-size: 12px;
+  font-weight: 700;
 }
 
 .lsOptionInput {
-  width: 50px;
+  width: 100px;
+  color: black;
 }
 
 .listSearch > button {

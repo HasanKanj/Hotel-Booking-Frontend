@@ -80,6 +80,7 @@ export default function Loginn() {
                     </label>
                     <div className="mt-2.5">
                       <input
+                      required
                         type="email"
                         placeholder="email"
                         id="email"
@@ -103,6 +104,7 @@ export default function Loginn() {
                     </div>
                     <div className="mt-2.5">
                       <input
+                      required
                         type="password"
                         placeholder="password"
                         id="password"
