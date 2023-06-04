@@ -69,6 +69,9 @@
   color: var(--black-coral);
   font-size: 15px;
   max-width: 550px;
+  text-align: center;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 .firstsec {
   background-color: #f7fafc; /* or use the hex code for gray-100 */
