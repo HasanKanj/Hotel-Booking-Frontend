@@ -3,6 +3,7 @@ export default function Firstsec() {
     <div>
       <section className="py-10 bg-blue-200 sm:py-16 lg:py-24">
         <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+        <h1 className="text-center text-4xl">Why Choose US</h1>
           <div className="grid grid-cols-1 gap-6 px-6 mt-8 sm:px-0 lg:mt-16 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-12">
             <div className="overflow-hidden bg-white border border-gray-200 rounded-lg">
               <div className="px-4 py-6">

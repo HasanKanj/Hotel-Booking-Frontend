@@ -24,12 +24,11 @@ const SearchItem = ({ item }) => {
       <img src={item.url} alt="" className="siImg" />
       <div className="siDesc">
         <h1 className="siTitle">{item.name}</h1>
-        <span className="siDistance">{item.distance} from center</span>
+        <span className="siDistance">{item.distance} m from center</span>
         <span className="siTaxiOp">Free airport taxi</span>
-        <span className="siSubtitle">
-          Studio Apartment with Air conditioning
-        </span>
+        <span className="siSubtitle">{item.address} </span>
         <span className="siFeatures">{item.description}</span>
+        <span className="siFeatures">Cheapest Price per room {item.cheapestPrice}$</span>
         <span className="siCancelOp">Free cancellation </span>
         <span className="siCancelOpSubtitle">
           You can cancel later, so lock in this great price today!
@@ -68,6 +67,8 @@ SearchItem.propTypes = {
     cheapestPrice: PropTypes.number,
     rating: PropTypes.number,
     description: PropTypes.string,
+    address: PropTypes.string,
+
     _id: PropTypes.string,
   }),
 };

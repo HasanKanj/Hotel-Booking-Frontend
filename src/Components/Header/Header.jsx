@@ -23,7 +23,9 @@ export default function Header() {
         <div>
           <div className="flex items-center justify-between py-3 md:py-5 md:block">
             <Link to="/">
-              <h2 className="text-2xl font-bold text-black">Book Me</h2>
+              <h2 className="text-2xl font-bold">
+                <span style={{ color: "#2B5D9E" }}>Book</span>Me
+              </h2>{" "}
             </Link>
             <div className="md:hidden">
               <button
@@ -96,7 +98,9 @@ export default function Header() {
               {user ? (
                 user.details.username && (
                   <div className="flex items-center">
-                    <span className="text-black mr-2">{user.details.username}</span>
+                    <span className="text-black mr-2">
+                      {user.details.username}
+                    </span>
                     <button className="Btnnn" onClick={handleLogout}>
                       <div className="sign">
                         <svg viewBox="0 0 512 512">

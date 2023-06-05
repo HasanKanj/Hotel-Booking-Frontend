@@ -126,7 +126,7 @@ export default function Footers() {
                   />
 
                   <button
-                    className="block rounded-full bg-blue-400 px-8 py-3 font-medium text-white transition hover:bg-blue-600"
+                    className="block rounded-full bg-blue-500 px-8 py-3 font-medium text-white transition hover:bg-blue-600"
                     type="submit"
                   >
                     Subscribe
@@ -157,7 +157,7 @@ export default function Footers() {
                 href="/"
                 rel="noreferrer"
                 target="_blank"
-                className="text-blue-400 transition hover:text-blue-400/75"
+                className="text-blue-500 transition hover:text-blue-500/75"
               >
                 <span className="sr-only">Facebook</span>
                 <svg
@@ -180,7 +180,7 @@ export default function Footers() {
                 href="/"
                 rel="noreferrer"
                 target="_blank"
-                className="text-blue-400 transition hover:text-blue-400/75"
+                className="text-blue-500 transition hover:text-blue-500/75"
               >
                 <span className="sr-only">Instagram</span>
                 <svg
@@ -203,7 +203,7 @@ export default function Footers() {
                 href="/"
                 rel="noreferrer"
                 target="_blank"
-                className="text-blue-400 transition hover:text-blue-400/75"
+                className="text-blue-500 transition hover:text-blue-500/75"
               >
                 <span className="sr-only">Twitter</span>
                 <svg
@@ -222,7 +222,7 @@ export default function Footers() {
                 href="/"
                 rel="noreferrer"
                 target="_blank"
-                className="text-blue-400 transition hover:text-blue-400/75"
+                className="text-blue-500 transition hover:text-blue-500/75"
               >
                 <span className="sr-only">GitHub</span>
                 <svg
