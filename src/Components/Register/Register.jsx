@@ -1,10 +1,10 @@
 import { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import { ToastContainer } from "react-toastify";
-import { toast } from "react-toastify";
+import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Signup from "../Signup/SIgnup";
+
 const API_URL = "https://booking-backend-ei2v.onrender.com/api/auth/register";
 
 export default function Register() {
@@ -14,9 +14,6 @@ export default function Register() {
   const [phone, setPhone] = useState("");
   const [showSignup, setShowSignup] = useState(false);
 
-  // const handleGoogleSignup = () => {
-  //   setShowSignup(true);
-  // };
   const handleUsernameChange = (ev) => {
     setUsername(ev.target.value);
   };
@@ -52,16 +49,16 @@ export default function Register() {
         setEmail("");
         setPassword("");
         setPhone("");
+        // Redirect to "/login" after successful registration
+        window.location.href = "/login";
       } else {
         console.log(response.data);
-
         toast.error("Registration failed. Please try again.");
       }
     } catch (error) {
       toast.error("Registration failed. Please try again.");
     }
   }
-
   return (
     <div>
       <ToastContainer position="bottom-right" />
