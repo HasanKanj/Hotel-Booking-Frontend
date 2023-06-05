@@ -114,7 +114,7 @@ export default function Header() {
               ) : (
                 <div className="mt-3 space-y-2 lg:hidden md:inline-block">
                   <Link
-                    to="/signup"
+                    to="/register"
                     className="inline-block w-full px-4 py-2 text-center text-black bg-black-600 rounded-md shadow hover:bg-gray-200"
                   >
                     Sign up
